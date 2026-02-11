@@ -282,13 +282,16 @@
 		align-items:center;
 		padding:14px 20px;
 	}
+
 	
 	.user-area{
-		margin-left:auto;     /* ⭐ pushes to right */
+		margin-left:auto;        /* move to right */
 		display:flex;
-		align-items:center;
-		gap:12px;
+		flex-direction:column;   /* ⭐ stack vertically */
+		align-items:flex-end;    /* right align text & button */
+		gap:4px;
 	}
+
 
   </style>
   <!-- Tailwind CSS -->
