@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Secure Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+font-family:Arial;
+background:#0f172a;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+}
+
+.container{
+background:#1e293b;
+padding:35px;
+border-radius:12px;
+width:350px;
+box-shadow:0 0 25px rgba(0,0,0,.4);
+}
+
+h2{text-align:center;margin-bottom:20px;}
+
+input{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:6px;
+border:none;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:15px;
+background:#3b82f6;
+border:none;
+color:white;
+font-weight:bold;
+cursor:pointer;
+border-radius:6px;
+}
+
+button:hover{background:#2563eb;}
+
+.link{
+text-align:right;
+margin-top:8px;
+cursor:pointer;
+color:#93c5fd;
+font-size:14px;
+}
+
+.loader{
+display:none;
+text-align:center;
+margin-top:10px;
+}
+
+.error{
+color:#f87171;
+text-align:center;
+margin-top:10px;
+}
+
+.success{
+color:#4ade80;
+text-align:center;
+margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LOGIN -->
+<div id="loginBox">
+<h2>Secure Login</h2>
+
+<input id="userid" placeholder="User ID">
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<div class="link" onclick="showReset()">Forgot Password?</div>
+
+<div class="loader" id="loader">Authenticating...</div>
+<div class="error" id="error"></div>
+</div>
+
+<!-- RESET -->
+<div id="resetBox" style="display:none;">
+<h2>Reset Password</h2>
+
+<input id="resetUser" placeholder="User ID or Email">
+
+<button onclick="resetPassword()">Send Reset Link</button>
+<div class="link" onclick="showLogin()">Back to Login</div>
+
+<div class="success" id="resetMsg"></div>
+<div class="error" id="resetError"></div>
+</div>
+
+</div>
+
+<script>
+
+// 🔗 REPLACE WITH YOUR N8N URLS
+const LOGIN_WEBHOOK="https://unsparse-sherman-nonfallaciously.ngrok-free.dev/webhook/login";
+const RESET_WEBHOOK="https://your-n8n-domain/webhook/reset";
+
+// 👉 PAGE TO REDIRECT AFTER SUCCESS
+const SUCCESS_PAGE="https://myportfolioassessment.netlify.app/";
+
+// LOGIN FUNCTION
+async function login(){
+
+document.getElementById("error").innerText="";
+document.getElementById("loader").style.display="block";
+
+const userid=document.getElementById("userid").value;
+const password=document.getElementById("password").value;
+
+try{
+
+const res=await fetch(LOGIN_WEBHOOK,{
+method:"POST",
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify({userid,password})
+});
+
+const data=await res.json();
+
+document.getElementById("loader").style.display="none";
+
+if(data.success){
+
+// OPTIONAL: store session locally
+localStorage.setItem("authUser",userid);
+
+// REDIRECT TO NEXT PAGE
+window.location.href=SUCCESS_PAGE;
+
+}else{
+
+document.getElementById("error").innerText=
+data.message || "Invalid credentials";
+
+}
+
+}catch(e){
+
+document.getElementById("loader").style.display="none";
+document.getElementById("error").innerText="Server not reachable";
+
+}
+
+}
+
+// RESET PASSWORD
+async function resetPassword(){
+
+document.getElementById("resetMsg").innerText="";
+document.getElementById("resetError").innerText="";
+
+const user=document.getElementById("resetUser").value;
+
+try{
+
+const res=await fetch(RESET_WEBHOOK,{
+method:"POST",
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify({user})
+});
+
+const data=await res.json();
+
+if(data.success){
+
+document.getElementById("resetMsg").innerText=
+"Reset link sent to registered email.";
+
+}else{
+
+document.getElementById("resetError").innerText=
+data.message || "Unable to process request";
+
+}
+
+}catch(e){
+
+document.getElementById("resetError").innerText="Server error";
+
+}
+
+}
+
+// NAVIGATION
+function showReset(){
+document.getElementById("loginBox").style.display="none";
+document.getElementById("resetBox").style.display="block";
+}
+
+function showLogin(){
+document.getElementById("resetBox").style.display="none";
+document.getElementById("loginBox").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
