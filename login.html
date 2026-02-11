@@ -6,22 +6,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
+:root{
+--bg-dark-1:#050B18;
+--bg-dark-2:#08142E;
+--accent:#38E8FF;
+--accent-soft:rgba(56,232,255,.18);
+--text-main:#E6EDFF;
+--text-muted:#9AA4C7;
+--card-bg:rgba(255,255,255,.06);
+--border-glass:rgba(255,255,255,.14);
+}
+
+*{box-sizing:border-box;}
+
 body{
-font-family:Arial;
-background:#0f172a;
+margin:0;
+font-family:Inter,Arial;
+background:
+radial-gradient(1200px 500px at 50% -200px,#0B2B5E 0%,transparent 60%),
+linear-gradient(180deg,var(--bg-dark-2),var(--bg-dark-1));
+color:var(--text-main);
+}
+
+/* ===== HEADER ===== */
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 24px;
+}
+
+.logo{height:36px;}
+
+.live-date{
+font-size:14px;
+color:var(--text-muted);
+}
+
+/* ===== PAGE WRAPPER ===== */
+.page{
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
-color:white;
+height:calc(70vh - 70px);
 }
 
+/* ===== LOGIN CARD ===== */
 .container{
-background:#1e293b;
-padding:35px;
-border-radius:12px;
-width:350px;
-box-shadow:0 0 25px rgba(0,0,0,.4);
+background:var(--card-bg);
+padding:5px;
+border-radius:16px;
+width:460px;
+border:1px solid var(--border-glass);
+backdrop-filter:blur(14px);
 }
 
 h2{text-align:center;margin-bottom:20px;}
@@ -29,81 +67,107 @@ h2{text-align:center;margin-bottom:20px;}
 input{
 width:100%;
 padding:12px;
-margin-top:10px;
-border-radius:6px;
-border:none;
+margin-top:5px;
+border-radius:10px;
+border:1px solid var(--border-glass);
+background:rgba(255,255,255,.05);
+color:white;
 }
 
 button{
 width:100%;
 padding:12px;
 margin-top:15px;
-background:#3b82f6;
+background:linear-gradient(90deg,#38E8FF,#2BC0FF);
 border:none;
-color:white;
+color:#001018;
 font-weight:bold;
 cursor:pointer;
-border-radius:6px;
+border-radius:10px;
 }
-
-button:hover{background:#2563eb;}
 
 .link{
 text-align:right;
 margin-top:8px;
 cursor:pointer;
-color:#93c5fd;
+color:#7CF9FF;
 font-size:14px;
 }
 
-.loader{
-display:none;
-text-align:center;
-margin-top:10px;
+/* ===== HERO ===== */
+.hero{
+  text-align:center;
+  padding:0 10px 10px;
+}
+.hero h1{
+  font-size:38px;
+  margin-bottom:10px;
+  color:var(--accent);
+}
+.hero p{
+  max-width:720px;
+  margin:0 auto;
+  font-size:17px;
+  line-height:1.6;
+  color:var(--text-muted);
 }
 
-.error{
-color:#f87171;
-text-align:center;
-margin-top:10px;
+/* ===== FOOTER ===== */
+
+.footer-bar{
+display:flex;
+justify-content:flex-end;
+align-items:right;
+padding:14px 20px;
+font-size:13px;
+color:var(--text-muted);
 }
 
-.success{
-color:#4ade80;
-text-align:center;
-margin-top:10px;
+.footer-status{
+display:flex;
+gap:20px;
 }
+
+.status-item{display:flex;align-items:right;gap:6px;}
+
+.dot{width:8px;height:8px;border-radius:50%;background:#6b7280;}
+.dot.up{background:#22c55e}
+.dot.down{background:#ef4444}
+
+footer a{color:var(--accent);text-decoration:none;}
+
+.loader{text-align:center;margin-top:10px;display:none;}
+.error{color:#ef4444;text-align:center;margin-top:10px;}
+.success{color:#22c55e;text-align:center;margin-top:10px;}
+
 </style>
-
-<header>
-<!-- ===== TOP ROW ===== -->
-<div class="top-bar">
-<img class="logo" src="https://ai-implementer.netlify.app/images/ai-implementer-logo.png">
-
-<div class="live-date">
-<span>
-Date & Time:
-<strong id="liveDateTime"></strong>
-</span>
-</div>
-</div>
-</header>
 </head>
 
 <body>
 
-<!-- ===== HEADER TEXT STARTS NEXT LINE ===== -->
-<div class="header-text">
-<h1>Smart <span style="color:#38E8FF">Portfolio Review Report Generator</span></h1>
-<p>
-Understand where your money is invested, how it is performing,
-and what adjustments can improve balance.
-</p>
+<!-- ===== HEADER ===== -->
+<div class="header">
+<img class="logo" src="https://ai-implementer.netlify.app/images/ai-implementer-logo.png">
+
+<div class="live-date">
+Date & Time:
+<strong id="liveDateTime"></strong>
 </div>
+</div>
+
+<section class="hero">
+  <h1>Portfolio Report Generator</h1>
+  <p>
+    One-click generation of investor-ready portfolio reports with
+    allocation, XIRR, P&amp;L, and rebalancing insights.
+  </p>
+</section>
+
+<!-- ===== CENTER LOGIN ===== -->
+<div class="page">
 
 <div class="container">
 
-<!-- LOGIN -->
 <div id="loginBox">
 <h2>Secure Login</h2>
 
@@ -118,7 +182,6 @@ and what adjustments can improve balance.
 <div class="error" id="error"></div>
 </div>
 
-<!-- RESET -->
 <div id="resetBox" style="display:none;">
 <h2>Reset Password</h2>
 
@@ -132,17 +195,14 @@ and what adjustments can improve balance.
 </div>
 
 </div>
+</div>
 
 <script>
 
-// 🔗 REPLACE WITH YOUR N8N URLS
 const LOGIN_WEBHOOK="https://unsparse-sherman-nonfallaciously.ngrok-free.dev/webhook/login";
 const RESET_WEBHOOK="https://your-n8n-domain/webhook/reset";
-
-// 👉 PAGE TO REDIRECT AFTER SUCCESS
 const SUCCESS_PAGE="https://myportfolioassessment.netlify.app/";
 
-// LOGIN FUNCTION
 async function login(){
 
 document.getElementById("error").innerText="";
@@ -160,34 +220,22 @@ body:JSON.stringify({userid,password})
 });
 
 const data=await res.json();
-
 document.getElementById("loader").style.display="none";
 
 if(data.success){
-
-// OPTIONAL: store session locally
 localStorage.setItem("authUser",userid);
-
-// REDIRECT TO NEXT PAGE
 window.location.href=SUCCESS_PAGE;
-
 }else{
-
 document.getElementById("error").innerText=
 data.message || "Invalid credentials";
-
 }
 
 }catch(e){
-
 document.getElementById("loader").style.display="none";
 document.getElementById("error").innerText="Server not reachable";
-
+}
 }
 
-}
-
-// RESET PASSWORD
 async function resetPassword(){
 
 document.getElementById("resetMsg").innerText="";
@@ -206,26 +254,18 @@ body:JSON.stringify({user})
 const data=await res.json();
 
 if(data.success){
-
 document.getElementById("resetMsg").innerText=
 "Reset link sent to registered email.";
-
 }else{
-
 document.getElementById("resetError").innerText=
 data.message || "Unable to process request";
-
 }
 
 }catch(e){
-
 document.getElementById("resetError").innerText="Server error";
-
+}
 }
 
-}
-
-// NAVIGATION
 function showReset(){
 document.getElementById("loginBox").style.display="none";
 document.getElementById("resetBox").style.display="block";
@@ -236,12 +276,11 @@ document.getElementById("resetBox").style.display="none";
 document.getElementById("loginBox").style.display="block";
 }
 
-
 function updateLiveClock(){
 
-const now = new Date();
+const now=new Date();
 
-const formatted = now.toLocaleString("en-IN",{
+const formatted=now.toLocaleString("en-IN",{
 timeZone:"Asia/Kolkata",
 day:"2-digit",
 month:"short",
@@ -252,16 +291,24 @@ second:"2-digit",
 hour12:false
 });
 
-document.getElementById("liveDateTime").innerText = formatted + " IST";
+document.getElementById("liveDateTime").innerText=formatted+" IST";
 }
 
-// run immediately
 updateLiveClock();
-
-// update every second
 setInterval(updateLiveClock,1000);
 
 </script>
 
+<footer class="footer-bar">
+
+<div class="footer-status" >
+<div>
+Powered by
+<a href="https://ai-implementer.netlify.app/" target="_blank">
+AI-Implementer
+</a>
+</div>
+
+</footer>
 </body>
 </html>
