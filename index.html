@@ -315,6 +315,45 @@
 		transform:scale(.95);
 	}
 
+    /* pill-style */
+	.pill-selector{
+		display:flex;
+		flex-wrap:wrap;
+		gap:12px;
+		margin-top:15px;
+		}
+
+		/* hide default radio */
+		.pill-selector input[type="radio"]{
+		display:none;
+		}
+
+		.pill{
+		padding:10px 18px;
+		border-radius:999px;
+		border:1px solid #2b3a4a;
+		background:#0f172a;
+		color:#cbd5e1;
+		font-size:14px;
+		cursor:pointer;
+		transition:all .25s ease;
+		}
+
+		/* hover */
+		.pill:hover{
+		border-color:#00e5ff;
+		color:#00e5ff;
+		}
+
+		/* active selected pill */
+		.pill-selector input[type="radio"]:checked + .pill{
+		background:linear-gradient(135deg,#00e5ff,#0284c7);
+		color:#001219;
+		font-weight:600;
+		border-color:#00e5ff;
+		box-shadow:0 0 10px rgba(0,229,255,.4);
+		}
+    /* pill-style Ends*/ 
 
   </style>
   <!-- Tailwind CSS -->
@@ -353,7 +392,28 @@
     </p>
    </div>
   </header>
- 	
+ 
+    <div class="upload-card">
+
+	<h2>Select Report Type:</h2>
+
+	<div class="pill-selector">
+
+	<input type="radio" id="summary" name="reportType" value="summary" >
+	<label for="summary" class="pill">Portfolio Summary</label>
+
+	<input type="radio" id="rebalancing" name="reportType" value="rebalancing" checked>
+	<label for="rebalancing" class="pill">Portfolio Re-balancing Report</label>
+
+	<input type="radio" id="opportunity" name="reportType" value="opportunity-insight">
+	<label for="opportunity" class="pill">Opportunity Insight Report</label>
+
+	</div>
+
+	</div>
+
+
+  
   <div class="upload-card">
     <h2>Upload Portfolio CSV</h2>
 
@@ -515,10 +575,13 @@ async function checkMfapi(){
   }
 }
 
+
 const user=localStorage.getItem("authUser");
 
+/*
 if(!user){window.location.href=LOGIN_PAGE;}
 document.getElementById("loggedUser").innerText=user;
+*/
 
 function logout(){
     localStorage.removeItem("authUser");
