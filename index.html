@@ -272,6 +272,10 @@
 	  text-decoration:none;
 	}
 	/* Status Ends*/
+	
+	.logo{
+       height:44px;
+    } 
   </style>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com">
@@ -282,11 +286,17 @@
 
 <body>
 
-<div class="page">
 
-  <header class="header-bar">
-  <img  src="https://ai-implementer.netlify.app/images/ai-implementer-logo.png" alt="Logo" class="header-logo">
-</header>
+<div class="page">	
+<!-- ===== TOP ROW ===== -->
+<div class="header-bar">
+<img class="logo" src="https://ai-implementer.netlify.app/images/ai-implementer-logo.png">
+
+<div class="user-area">
+<span>Logged in as: <strong id="loggedUser"></strong></span>
+<button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+</div>
 
 <!-- Hero Section -->
   <header class="relative bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-center px-2" id="top">
@@ -462,6 +472,16 @@ async function checkMfapi(){
     dot.classList.add("down");
     text.textContent="Service: Unreachable";
   }
+}
+
+const user=localStorage.getItem("authUser");
+
+if(!user){window.location.href=LOGIN_PAGE;}
+document.getElementById("loggedUser").innerText=user;
+
+function logout(){
+    localStorage.removeItem("authUser");
+    window.location.href=LOGIN_PAGE;
 }
 
 checkPortfolioService();
