@@ -44,7 +44,7 @@
     .page {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 24px 20px 5px;
+      padding: 24px 20px 96px;
     }
 
     header {
@@ -70,15 +70,6 @@
       margin-right: auto;
     }
 
-    .sync-card {
-      padding: 12px;
-      margin-bottom: 24px;  
-      backdrop-filter: blur(14px);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-glass);
-      box-shadow: var(--shadow-soft);
-    }
-	
     .upload-card {
       padding: 22px;
       background: var(--bg-card);
@@ -364,37 +355,40 @@
 		}
     /* pill-style Ends*/ 
 
-		.btn-sync {
-		  margin-top: 22px;
-		  width: 20%;
-		  padding: 5px;
-		  background: #D8863B;
-		  color: #001018;
-		  border: none;
-		  border-radius: var(--radius-md);
-		  font-size: 12px;
-		  font-weight: 700;
-		  cursor: pointer;
-		  transition: opacity 0.25s ease, transform 0.15s ease;
-		}
+    .sync-card {
+      padding: 22px;
+	  margin-bottom: 24px;
+      background: var(--bg-card);
+      backdrop-filter: blur(14px);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-glass);
+      box-shadow: var(--shadow-soft);
+    }
+	
+	.btn-sync {
+      margin-top: 22px;
+      width: 20%;
+      padding: 5px;
+      background: #D8863B;
+      color: #001018;
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.25s ease, transform 0.15s ease;
+    }
 
-		.btn-sync:active {
-		  transform: scale(0.98);
-		}
+    .btn-sync:active {
+      transform: scale(0.98);
+    }
 
-		/* ✅ CLEAR DISABLED STATE */
-		.btn-sync:disabled {
-		  opacity: 0.55;
-		  cursor: not-allowed;
-		  transform: none;
-		}
-		
-		@media print {
-		  .no-print {
-			display: none !important;
-		  }
-		}
-
+    /* ✅ CLEAR DISABLED STATE */
+    .btn-sync:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
   </style>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com">
@@ -420,12 +414,12 @@
 <!-- Hero Section -->
   <header class="relative bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-center px-2" id="top">
    <div class="max-w-4xl mx-auto">
-    <h2 class="text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+    <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
      Smart
      <span class="text-cyan-400">
-      Portfolio Review 
-     </span>Report Generator
-    </h2>
+      Portfolio Review Report Generator
+     </span>
+    </h1>
     <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10">
       Understand where your money is invested, how it is performing,
       and what adjustments can improve balance.
@@ -434,7 +428,6 @@
   </header>
   
   <!-- SYNC MF NAV -->
-   <div class="no-print">
 	<div class="sync-card">
 	   Sync Mutual Fund NAV: <button id="syncNavBtn" class="btn-sync">
 		  SYNC
@@ -446,7 +439,6 @@
 	<!-- ✅ ADD THIS -->
 	<div id="status" class="status"></div>
 	</div>
-	<div>
 	<!-- Sync NAV --!>
  
     <div class="upload-card">
@@ -507,8 +499,8 @@
     <div id="message"></div>
   </div>
 
-  <div id="result"></div>   
-	
+  <div id="result"></div>
+
 </div>
 
 <footer class="footer-bar">
@@ -539,7 +531,6 @@
   const message = document.getElementById("message");
   const result = document.getElementById("result");
   const status = document.getElementById("status");
-  
   
   //Add TIMER
   let seconds = 0;
@@ -618,7 +609,7 @@
   const HEALTH_WEBHOOK = "https://unsparse-sherman-nonfallaciously.ngrok-free.dev/health";
   const LOGIN_PAGE="https://myportfolioassessment.netlify.app/login.html";
   const SYNC_NAV_WEBHOOK =
-  "https://unsparse-sherman-nonfallaciously.ngrok-free.dev/webhook/38bb8332-dd92-4994-97ad-b2bf8a4e7758";
+  "https://unsparse-sherman-nonfallaciously.ngrok-free.dev/webhook-test/38bb8332-dd92-4994-97ad-b2bf8a4e7758";
   
   async function checkPortfolioService(){
   const el = document.getElementById("portfolioServiceStatus");
@@ -687,7 +678,7 @@ function setupSyncButton() {
     seconds = 0;
 
     // Immediately show status
-    status.textContent = "🔄 Syncing Mutual Fund NAV... (0s)";
+    status.textContent = "🔄 Syncing MF NAV... (0s)";
 
     // Start timer
     timerInterval = setInterval(() => {
@@ -698,7 +689,7 @@ function setupSyncButton() {
       const formatted =
         mins > 0 ? `${mins}m ${secs}s` : `${secs}s`;
 
-      status.textContent = `🔄 Syncing Mutual Fund NAV... (${formatted})`;
+      status.textContent = `🔄 Syncing MF NAV... (${formatted})`;
     }, 1000);
 
     try {
@@ -717,7 +708,7 @@ function setupSyncButton() {
       clearInterval(timerInterval);
 
       status.textContent =
-        "✅ Mutual Fund NAV Sync Completed Successfully.";
+        "✅ MF NAV Sync Completed Successfully.";
       status.className = "status success";
 
       btn.disabled = false;
@@ -726,7 +717,7 @@ function setupSyncButton() {
       clearInterval(timerInterval);
 
       status.textContent =
-        "❌ Mutual Fund NAV Sync failed. Please try again.";
+        "❌ MF NAV Sync failed. Please try again.";
       status.className = "status error";
 
       btn.disabled = false;
