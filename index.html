@@ -222,15 +222,6 @@
 	}
 
     /* Status Starts*/
-	/* ===== STATUS ===== */
-	.status{
-	  margin-top:16px;
-	  text-align:center;
-	  font-size:14px;
-	  min-height:22px;
-	}
-	.success{color:#22c55e}
-	.error{color:#ef4444}
 
 	/* ===== FOOTER ===== */
 	.footer-bar{
@@ -354,41 +345,6 @@
 		box-shadow:0 0 10px rgba(0,229,255,.4);
 		}
     /* pill-style Ends*/ 
-
-    .sync-card {
-      padding: 22px;
-	  margin-bottom: 24px;
-      background: var(--bg-card);
-      backdrop-filter: blur(14px);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-glass);
-      box-shadow: var(--shadow-soft);
-    }
-	
-	.btn-sync {
-      margin-top: 22px;
-      width: 20%;
-      padding: 5px;
-      background: #D8863B;
-      color: #001018;
-      border: none;
-      border-radius: var(--radius-md);
-      font-size: 12px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: opacity 0.25s ease, transform 0.15s ease;
-    }
-
-    .btn-sync:active {
-      transform: scale(0.98);
-    }
-
-    /* ✅ CLEAR DISABLED STATE */
-    .btn-sync:disabled {
-      opacity: 0.55;
-      cursor: not-allowed;
-      transform: none;
-    }
   </style>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com">
@@ -426,21 +382,7 @@
     </p>
    </div>
   </header>
-  
-  <!-- SYNC MF NAV -->
-	<div class="sync-card">
-	   Sync Mutual Fund NAV: <button id="syncNavBtn" class="btn-sync">
-		  SYNC
-		</button> 
-	   <p class="text-muted">
-		Use this before generating reports to ensure latest NAV data.
-	  </p>
-
-	<!-- ✅ ADD THIS -->
-	<div id="status" class="status"></div>
-	</div>
-	<!-- Sync NAV --!>
- 
+   
     <div class="upload-card">
 
 	<h2>Select Report Type:</h2>
@@ -530,7 +472,7 @@
   const submitBtn = document.getElementById("submitBtn");
   const message = document.getElementById("message");
   const result = document.getElementById("result");
-  const status = document.getElementById("status");
+  
   
   //Add TIMER
   let seconds = 0;
@@ -668,66 +610,6 @@ function logout(){
 
 checkPortfolioService();
 checkMfapi();
-
-function setupSyncButton() {
-  const btn = document.getElementById("syncNavBtn");
-  let timerInterval = null;
-  let seconds = 0;
-
-  btn.addEventListener("click", async () => {
-    btn.disabled = true;
-    status.className = "status";
-    seconds = 0;
-
-    // Immediately show status
-    status.textContent = "🔄 Syncing MF NAV... (0s)";
-
-    // Start timer
-    timerInterval = setInterval(() => {
-      seconds++;
-      const mins = Math.floor(seconds / 60);
-      const secs = seconds % 60;
-
-      const formatted =
-        mins > 0 ? `${mins}m ${secs}s` : `${secs}s`;
-
-      status.textContent = `🔄 Syncing MF NAV... (${formatted})`;
-    }, 1000);
-
-    try {
-      const response = await fetch(SYNC_NAV_WEBHOOK, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          source: "portfolio-ui",
-          action: "sync-mf-nav",
-          requestedAt: new Date().toISOString()
-        })
-      });
-
-      const data = await response.json().catch(() => ({}));
-
-      clearInterval(timerInterval);
-
-      status.textContent =
-        "✅ MF NAV Sync Completed Successfully.";
-      status.className = "status success";
-
-      btn.disabled = false;
-
-    } catch (error) {
-      clearInterval(timerInterval);
-
-      status.textContent =
-        "❌ MF NAV Sync failed. Please try again.";
-      status.className = "status error";
-
-      btn.disabled = false;
-    }
-  });
-}
-
-setupSyncButton();
 </script>
 
 </body>
