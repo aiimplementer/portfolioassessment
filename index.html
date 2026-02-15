@@ -33,35 +33,108 @@
          padding:18px 18px 4px;
          }
          /* HEADER BAR */
-         .header-bar{
-         display:flex;
-         align-items:center;
-         padding:10px 0;
-         }
-         .logo{
-         height:34px;
-         }
-         .user-area{
-         margin-left:auto;
-         display:flex;
-         flex-direction:column;
-         align-items:flex-end;
-         gap:2px;
-         font-size:13px;
-         color:var(--muted);
-         }
-         .logout-btn{
-         padding:3px 12px;
-         font-size:12px;
-         border-radius:999px;
-         border:1px solid var(--border);
-         background:linear-gradient(135deg,var(--accent),var(--accent-2));
-         color:#001018;
-         font-weight:600;
-         cursor:pointer;
-         transition:.2s ease;
-         }
-         .logout-btn:hover{opacity:.85}
+         /* HEADER BAR */
+.header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 25px;
+    background: var(--panel-soft);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.35);
+}
+
+.logo {
+    height: 45px;
+}
+
+.user-area-header {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* RIGHT MENU */
+.top-menu {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.logged-user {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* MENU LINKS */
+.menu-link {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all .25s ease;
+    position: relative;
+}
+
+/* Hover Glow Effect */
+.menu-link:hover {
+    color: var(--accent);
+}
+
+/* Accent underline animation */
+.menu-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    transition: width .3s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #001018;
+    transition: all .25s ease;
+}
+
+.logout-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(34,211,238,.35);
+}
+
+/* ACTIVE MENU STATE */
+.menu-link.active {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.menu-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+		 
+		 
          /* HERO — SMALLER */
          header{
          padding:5px 2px 2px;
@@ -325,6 +398,21 @@
 		.report-type-card .pill-selector{
 		  margin-top:0;
 		}
+		
+		.nav a{
+    color:#8fbcd4; /* muted cyan text */
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+    transition:all 0.3s ease;
+}
+
+.nav a:hover{
+    color:#38bdf8; /* cyan highlight */
+    text-shadow:0 0 8px rgba(56,189,248,0.6);
+}
+
+
 
       </style>
       <!-- Tailwind CSS -->
@@ -335,18 +423,34 @@
    <body>
       <div class="page">
          <!-- ===== TOP ROW ===== -->
-         <div class="header-bar">
-            <img class="logo" src="https://ai-implementer.netlify.app/images/ai-implementer-logo.png">
-            <div class="user-area">Smart Portfolio Review Report Generator</div>
-            <div class="user-area">
-               <span>Logged in as: <strong id="loggedUser"></strong></span>
-               <button class="logout-btn" onclick="logout()">Logout</button>
-            </div>
-         </div>
+		<div class="header-bar">
+			<img class="logo" 
+				 src="https://ai-implementer.netlify.app/images/ai-implementer-logo.png">
+
+			<div class="user-area-header">
+				Smart Portfolio Review Report Generator
+			</div>
+
+			<!-- ===== RIGHT MENU ===== -->
+			<div class="top-menu">
+				<span class="logged-user">
+					Logged in as: <strong id="loggedUser"></strong>
+				</span>
+
+				<a href="dashboard.html" class="menu-link active">Dashboard</a>
+				<a href="faq.html" class="menu-link">FAQ</a>
+				<button class="menu-link logout-btn" onclick="logout()">
+					Logout
+				</button>
+
+			</div>
+
+		</div>
+
          <!-- Hero Section -->
          <header class="relative bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-center px-2" id="top">
             <div class="max-w-4xl mx-auto">
-               <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-5">
+               <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-1">
                   Understand where your money is invested, how it is performing,
                   and what adjustments can improve balance.
                </p>
@@ -534,7 +638,7 @@
          const user=localStorage.getItem("authUser");
          
          
-         if(!user){window.location.href=LOGIN_PAGE;}
+         //if(!user){window.location.href=LOGIN_PAGE;}
          document.getElementById("loggedUser").innerText=user;
          
          

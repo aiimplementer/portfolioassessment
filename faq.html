@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio — FAQ</title>
+
+<style>
+:root{
+--bg:#0b0f1a;
+--panel:#111827;
+--panel-soft:#0f172a;
+--border:rgba(255,255,255,.08);
+--text:#f8fafc;
+--muted:#94a3b8;
+--accent:#22d3ee;
+--accent-2:#3b82f6;
+--success:#22c55e;
+--error:#ef4444;
+--radius:14px;
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Inter,system-ui,-apple-system,sans-serif;
+background:
+radial-gradient(600px 300px at 80% -10%,rgba(34,211,238,.15),transparent 60%),
+linear-gradient(180deg,#0b1220,#070b14);
+color:var(--text);
+min-height:100vh;
+}
+
+.page{
+max-width:90%;
+margin:auto;
+padding:18px 18px 4px;
+}
+
+/* ===== HEADER ===== */
+.header-bar{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:12px 25px;
+background:var(--panel-soft);
+border:1px solid var(--border);
+border-radius:12px;
+margin-bottom:10px;
+box-shadow:0 4px 14px rgba(0,0,0,.35);
+}
+
+.logo{height:45px}
+
+.user-area-header{
+font-size:16px;
+font-weight:600;
+color:var(--text);
+}
+
+.top-menu{
+display:flex;
+align-items:center;
+gap:22px;
+}
+
+.logged-user{
+font-size:13px;
+color:var(--muted);
+}
+
+.menu-link{
+color:var(--muted);
+text-decoration:none;
+font-size:14px;
+font-weight:500;
+background:transparent;
+border:none;
+cursor:pointer;
+transition:.25s ease;
+position:relative;
+}
+
+.menu-link:hover{color:var(--accent)}
+.menu-link::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-4px;
+width:0;
+height:2px;
+background:linear-gradient(90deg,var(--accent),var(--accent-2));
+transition:width .3s ease;
+}
+.menu-link:hover::after{width:100%}
+.menu-link.active{color:var(--accent);font-weight:600}
+.menu-link.active::after{width:100%}
+
+.logout-btn{
+padding:6px 16px;
+border-radius:999px;
+font-weight:600;
+background:linear-gradient(135deg,var(--accent),var(--accent-2));
+color:#001018;
+}
+
+/* ===== FAQ CONTENT ===== */
+.faq-container{
+background:var(--panel);
+border:1px solid var(--border);
+border-radius:var(--radius);
+padding:30px;
+margin-top:15px;
+}
+
+.faq-title{
+font-size:24px;
+margin-bottom:10px;
+background:linear-gradient(90deg,#22d3ee,#60a5fa);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.faq-sub{
+color:var(--muted);
+font-size:13px;
+margin-bottom:25px;
+}
+
+.faq-item{
+border:1px solid var(--border);
+border-radius:12px;
+margin-bottom:16px;
+overflow:hidden;
+background:var(--panel-soft);
+}
+
+.faq-question{
+padding:16px 20px;
+cursor:pointer;
+display:flex;
+justify-content:space-between;
+font-weight:600;
+}
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+transition:max-height .4s ease,padding .3s ease;
+padding:0 20px;
+font-size:14px;
+color:var(--muted);
+line-height:1.6;
+}
+
+.faq-item.active .faq-answer{
+max-height:600px;
+padding:0 20px 18px;
+}
+
+.faq-question span{transition:transform .3s ease}
+.faq-item.active .faq-question span{transform:rotate(180deg)}
+
+/* ===== FOOTER ===== */
+.footer-bar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 20px;
+font-size:12px;
+border-top:1px solid var(--border);
+color:var(--muted);
+margin-top:2px;
+}
+
+.footer-status{
+display:flex;
+gap:18px;
+}
+
+.status-item{
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+.dot{
+width:7px;
+height:7px;
+border-radius:50%;
+background:#6b7280;
+}
+
+.dot.up{background:var(--success)}
+.dot.down{background:var(--error)}
+
+footer a{
+color:var(--accent);
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+<!-- ===== HEADER ===== -->
+<div class="header-bar">
+<img class="logo" src="https://ai-implementer.netlify.app/images/ai-implementer-logo.png">
+<div class="user-area-header">Smart Portfolio Review Report Generator</div>
+<div class="top-menu">
+<span class="logged-user">Logged in as: <strong id="loggedUser"></strong></span>
+<a href="index.html" class="menu-link">Dashboard</a>
+<a href="faq.html" class="menu-link active">FAQ</a>
+<button class="menu-link logout-btn" onclick="logout()">Logout</button>
+</div>
+</div>
+
+<!-- ===== FAQ CONTENT ===== -->
+<div class="faq-container">
+<div class="faq-title">Dashboard & Report – FAQs</div>
+<div class="faq-sub">Common questions related to portfolio upload, reports, and services</div>
+
+<div class="faq-item">
+<div class="faq-question">1. What type of file can I upload on the Dashboard? <span>▼</span></div>
+<div class="faq-answer">
+You can upload a portfolio statement in PDF format. Only PDF files are supported for analysis.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">2. What happens after I upload my portfolio PDF? <span>▼</span></div>
+<div class="faq-answer">
+Once uploaded, the system processes your file and generates a detailed portfolio analysis report based on the selected report type.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">3. What are the different report types available? <span>▼</span></div>
+<div class="faq-answer">
+You can choose between Portfolio Summary, Portfolio Re-balancing Report, and Monthly Insight Report.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">4. How long does report generation take? <span>▼</span></div>
+<div class="faq-answer">
+Report generation time depends on portfolio size. A live timer shows progress while the report is being generated.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">5. Why do I see “Generating report…” with a timer? <span>▼</span></div>
+<div class="faq-answer">
+The timer indicates active processing of your portfolio and helps you track how long the analysis is taking.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">6. What does “Portfolio Analysis: Available” in the footer mean? <span>▼</span></div>
+<div class="faq-answer">
+It indicates that the portfolio analysis backend service is reachable and functioning correctly.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">7. What does “Service: Available” in the footer indicate? <span>▼</span></div>
+<div class="faq-answer">
+This confirms that external market data services are reachable and required data can be fetched successfully.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">8. What should I do if a service shows “Unreachable”? <span>▼</span></div>
+<div class="faq-answer">
+If a service is unreachable, try refreshing the page after some time or check your internet connectivity.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">9. Is my uploaded portfolio data stored permanently? <span>▼</span></div>
+<div class="faq-answer">
+Uploaded files are used only for generating the report and are not stored permanently after processing.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">10. Why do I need to be logged in to access the Dashboard? <span>▼</span></div>
+<div class="faq-answer">
+Login ensures secure access to the system and prevents unauthorized usage of portfolio analysis services.
+</div>
+</div>
+
+
+</div>
+
+<!-- FAQ CONTENT -->
+<div class="faq-container">
+<div class="faq-title">Report-Specific FAQs</div>
+<div class="faq-sub">Questions explained based on the selected report type</div>
+
+<!-- PORTFOLIO SUMMARY -->
+<div class="faq-item">
+<div class="faq-question">1. What does the Portfolio Summary report include? <span>▼</span></div>
+<div class="faq-answer">
+It provides an overall snapshot of your investments including asset allocation, current value, gains or losses, and portfolio-level performance indicators.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">2. Who should use the Portfolio Summary report? <span>▼</span></div>
+<div class="faq-answer">
+This report is ideal for investors who want a quick, high-level understanding of their portfolio without deep analytical breakdowns.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">3. Does the summary report suggest changes? <span>▼</span></div>
+<div class="faq-answer">
+No, it focuses on current state visibility. Recommendations are covered in the Re-balancing report.
+</div>
+</div>
+
+<!-- RE-BALANCING REPORT -->
+<div class="faq-item">
+<div class="faq-question">4. What is the purpose of the Portfolio Re-balancing report? <span>▼</span></div>
+<div class="faq-answer">
+It analyzes deviations from ideal asset allocation and suggests adjustments to improve risk alignment and long-term returns.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">5. How are re-balancing suggestions calculated? <span>▼</span></div>
+<div class="faq-answer">
+Suggestions are derived based on asset concentration, diversification levels, and relative exposure across asset classes.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">6. Does re-balancing mean selling existing investments? <span>▼</span></div>
+<div class="faq-answer">
+Not necessarily. The report indicates allocation gaps; execution decisions remain fully under investor control.
+</div>
+</div>
+
+<!-- MONTHLY INSIGHT -->
+<div class="faq-item">
+<div class="faq-question">7. What does the Monthly Insight report focus on? <span>▼</span></div>
+<div class="faq-answer">
+It highlights recent portfolio movements, performance trends, and notable changes observed during the selected month.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">8. Is the Monthly Insight report suitable for SIP investors? <span>▼</span></div>
+<div class="faq-answer">
+Yes, it is especially useful for tracking SIP progress, contribution impact, and short-term performance variations.
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">9. Does the Monthly Insight compare past months? <span>▼</span></div>
+<div class="faq-answer">
+It focuses on the latest period but may reference prior values for context where relevant.
+</div>
+</div>
+
+<!-- COMMON -->
+<div class="faq-item">
+<div class="faq-question">10. Can I generate multiple report types for the same portfolio? <span>▼</span></div>
+<div class="faq-answer">
+Yes. You can upload the same portfolio file and generate different report types independently.
+</div>
+</div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer-bar">
+<div class="footer-status">
+<div id="portfolioServiceStatus" class="status-item">
+<span class="dot"></span>
+<span>Portfolio Analysis: Checking…</span>
+</div>
+<div id="mfapiStatus" class="status-item">
+<span class="dot"></span>
+<span>Service: Checking…</span>
+</div>
+</div>
+<div>
+Powered by <a href="https://ai-implementer.netlify.app/" target="_blank">AI-Implementer</a>
+</div>
+</footer>
+
+</div>
+
+<script>
+const items=document.querySelectorAll(".faq-item");
+items.forEach(item=>{
+item.querySelector(".faq-question").addEventListener("click",()=>{
+items.forEach(i=>{if(i!==item)i.classList.remove("active");});
+item.classList.toggle("active");
+});
+});
+
+const HEALTH_WEBHOOK="https://unsparse-sherman-nonfallaciously.ngrok-free.dev/health";
+const LOGIN_PAGE="https://myportfolioassessment.netlify.app/login.html";
+
+async function checkPortfolioService(){
+const el=document.getElementById("portfolioServiceStatus");
+const dot=el.querySelector(".dot");
+const text=el.querySelector("span:last-child");
+dot.classList.remove("up","down");
+try{
+const res=await fetch(HEALTH_WEBHOOK,{cache:"no-store"});
+if(!res.ok)throw 0;
+dot.classList.add("up");
+text.textContent="Portfolio Analysis: Available";
+}catch{
+dot.classList.add("down");
+text.textContent="Portfolio Analysis: Unreachable";
+}
+}
+
+async function checkMfapi(){
+const el=document.getElementById("mfapiStatus");
+const dot=el.querySelector(".dot");
+const text=el.querySelector("span:last-child");
+dot.classList.remove("up","down");
+try{
+const res=await fetch("https://api.mfapi.in/mf/120503");
+const data=await res.json();
+if(!data?.meta?.scheme_name)throw 0;
+dot.classList.add("up");
+text.textContent="Service: Available";
+}catch{
+dot.classList.add("down");
+text.textContent="Service: Unreachable";
+}
+}
+
+const user=localStorage.getItem("authUser");
+document.getElementById("loggedUser").innerText=user;
+
+function logout(){
+localStorage.removeItem("authUser");
+window.location.href=LOGIN_PAGE;
+}
+
+checkPortfolioService();
+checkMfapi();
+</script>
+
+</body>
+</html>
