@@ -116,16 +116,14 @@
 		 
 		 #uploadForm{
 		  display:flex;
-		  flex-direction:column;   /* stack items */
+		  flex-direction:column;
 		  gap:16px;
-		  flex:1;
+		  width:100%;
 		}
 
 		#uploadForm input[type="file"]{
-		  flex:0 0 auto;     /* ❌ stop full stretch */
-		 width:100%;        /* take full width */
-		  margin:0;
-		  flex:1;          /* makes file input expand */
+		  width:100%;
+		  display:block;
 		}
 		 
          /* FILE INPUT */
