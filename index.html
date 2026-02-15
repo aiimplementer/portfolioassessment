@@ -310,6 +310,22 @@
          background: linear-gradient(90deg,#22d3ee,#3b82f6);
          border-radius: 12px 12px 0 0;
          }
+		 .report-type-card{
+		  display:flex;
+		  flex-direction:row;
+		  align-items:center;
+		  gap:20px;
+		}
+
+		.report-type-card h2{
+		  margin:0;
+		  white-space:nowrap;
+		}
+
+		.report-type-card .pill-selector{
+		  margin-top:0;
+		}
+
       </style>
       <!-- Tailwind CSS -->
       <script src="https://cdn.tailwindcss.com"></script>
@@ -336,7 +352,7 @@
                </p>
             </div>
          </header>
-         <div class="upload-card">
+         <div class="upload-card report-type-card">
             <h2>Select Report Type:</h2>
             <div class="pill-selector">
                <input type="radio" id="summary" name="reportType" value="summary" checked>
