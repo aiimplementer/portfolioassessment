@@ -569,7 +569,7 @@
              formData.append("reportType", reportType);
          
              const response = await fetch(
-               "https://unsparse-sherman-nonfallaciously.ngrok-free.dev/webhook/96172d87-8674-48d1-acc4-e43b2ddbe9a4",
+               "https://unsparse-sherman-nonfallaciously.ngrok-free.dev/webhook/5e6790b5-dc6e-4dd5-92b8-e19d9e116c72",
          
          
                { method: "POST", body: formData }
@@ -638,7 +638,7 @@
          const user=localStorage.getItem("authUser");
          
          
-         //if(!user){window.location.href=LOGIN_PAGE;}
+         if(!user){window.location.href=LOGIN_PAGE;}
          document.getElementById("loggedUser").innerText=user;
          
          
