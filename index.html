@@ -437,7 +437,11 @@
 					Logged in as: <strong id="loggedUser"></strong>
 				</span>
 
-				<a href="dashboard.html" class="menu-link active">Dashboard</a>
+				<a href="index.html"
+				   class="menu-link active"
+				   onclick="return false;">
+				  Dashboard
+				</a>
 				<a href="faq.html" class="menu-link">FAQ</a>
 				<button class="menu-link logout-btn" onclick="logout()">
 					Logout
@@ -570,6 +574,7 @@
          
              const response = await fetch(
                "https://unsparse-sherman-nonfallaciously.ngrok-free.dev/webhook/0850b7f1-2cc6-47ba-b630-530627fcd3f2",
+			   
          
          
                { method: "POST", body: formData }
