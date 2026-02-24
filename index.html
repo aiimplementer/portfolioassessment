@@ -573,6 +573,7 @@
            if (!fileInput.files.length) return;                 
          
            try {  
+		            submitBtn.disabled = true;  
 					await checkPortfolioService();
 					await checkMfapi();
 					
@@ -580,7 +581,7 @@
 					 message.textContent = "";
 		 
 					if (isPortfolioServiceUp && isMfapiUp) {
-					      submitBtn.disabled = true;         
+					             
 						  // ⏱ TIMER — added
 						  startTimer();
 		   
