@@ -574,11 +574,12 @@
          
            try {  
 		            submitBtn.disabled = true;  
-					await checkPortfolioService();
-					await checkMfapi();
-					
-					 result.style.display = "none";
+					result.style.display = "none";
 					 message.textContent = "";
+					 
+					await checkPortfolioService();
+					await checkMfapi();		
+					 
 		 
 					if (isPortfolioServiceUp && isMfapiUp) {
 					             
