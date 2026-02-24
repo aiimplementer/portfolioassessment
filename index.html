@@ -573,10 +573,11 @@
            if (!fileInput.files.length) return;                 
          
            try {  
-		            result.style.display = "none";
-					
 					await checkPortfolioService();
 					await checkMfapi();
+					
+					 result.style.display = "none";
+					 message.textContent = "";
 		 
 					if (isPortfolioServiceUp && isMfapiUp) {
 					      submitBtn.disabled = true;         
