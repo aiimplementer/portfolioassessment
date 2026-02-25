@@ -198,25 +198,76 @@ footer a{
 color:var(--accent);
 text-decoration:none;
 }
+
+header#top::before{
+  content:"";
+  display:block;
+  height:2px;
+  width:100%;
+  background: linear-gradient(90deg,#22d3ee,#3b82f6);
+  border-radius: 12px 12px 0 0;
+}
+
+header#top{
+  background: linear-gradient(
+    90deg,
+    rgba(34,211,238,.08),
+    rgba(59,130,246,.08)
+  ),
+  var(--panel-soft);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.04),
+    0 8px 20px rgba(0,0,0,.35);
+  margin-bottom: 2px;
+}
+header{
+  padding:5px 2px 2px;
+}
+
+header p{
+  margin-top:6px;
+  margin-bottom:0;
+}
 </style>
+<!-- Tailwind CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <!-- Google Font -->
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 </head>
 
 <body>
 <div class="page">
 
-<!-- ===== HEADER ===== -->
+<!-- ===== TOP ROW ===== -->
 <div class="header-bar">
-<img class="logo" src="https://ai-implementer.netlify.app/images/ai-implementer-logo.png">
-<div class="user-area-header">Smart Portfolio Review Report Generator</div>
-<div class="top-menu">
-<span class="logged-user">Logged in as: <strong id="loggedUser"></strong></span>
-<a href="index.html" class="menu-link">Dashboard</a>
-<a href="faq.html" class="menu-link active" onclick="return false;">FAQ</a>
-<button class="menu-link logout-btn" onclick="logout()">Logout</button>
-</div>
+	<img class="logo" src="https://ai-implementer.netlify.app/images/ai-implementer-logo.png">
+	<div class="user-area-header">Smart Portfolio Review Report Generator</div>
+
+	<!-- ===== RIGHT MENU ===== -->
+	<div class="top-menu">
+		<span class="logged-user">
+			Logged in as: <strong id="loggedUser"></strong>
+		</span>
+	
+		<a href="index.html" class="menu-link">Dashboard</a>
+		<a href="faq.html" class="menu-link active" onclick="return false;">FAQ</a>
+		<button class="menu-link logout-btn" onclick="logout()">Logout</button>
+	</div>
 </div>
 
-
+<!-- Hero Section -->
+         <header class="relative bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-center px-2" id="top">
+            <div class="max-w-4xl mx-auto">
+               <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-1">
+                  Understand where your money is invested, how it is performing,
+                  and what adjustments can improve balance.
+               </p>
+            </div>
+         </header>
+		 
 <!-- ===== FAQ CONTENT ===== -->
 <div class="faq-container">
 <div class="faq-title">Portfolio Dashboard & Return Insights – FAQs</div>
@@ -465,6 +516,8 @@ text.textContent="Service: Unreachable";
 }
 
 const user=localStorage.getItem("authUser");
+if(!user){window.location.href=LOGIN_PAGE;}
+
 document.getElementById("loggedUser").innerText=user;
 
 function logout(){
