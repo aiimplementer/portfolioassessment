@@ -1,1363 +1,696 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>AI Implementer | Affordable AI Automation & Chatbot Solutions for Small Businesses</title>
-  
-  <!-- SEO -->
-  <meta content="AI Implementer helping small businesses streamline processes with AI-driven automation, chatbots, and workflow solutions." name="description"/>    
-  <meta content="AI Implementer, AI Freelancer, AI for Small Business, AI Partner, Small Business Automation, Chatbots, Workflow Automation, AI Solutions, AI Chatbot, AI Consultant, Small Business AI Solutions" name="keywords"/>
-  
-  <!-- -->
-    <meta charset="utf-8">
-	<meta name="language" content="en">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-	<meta name="theme-color" content="#0f172a">
-	
-	
-    <link rel="canonical" href="https://ai-implementer.netlify.app/">
-	<link rel="alternate" href="https://ai-implementer.netlify.app/" hreflang="en">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <head>
+      <meta charset="UTF-8">
+      <title>Portfolio — Wealth Assessment</title>
+      <style>
+         :root{
+         --bg:#0b0f1a;
+         --panel:#111827;
+         --panel-soft:#0f172a;
+         --border:rgba(255,255,255,.08);
+         --text:#f8fafc;
+         --muted:#94a3b8;
+         --accent:#22d3ee;
+         --accent-2:#3b82f6;
+         --success:#22c55e;
+         --error:#ef4444;
+         --radius:14px;
+         }
+         *{box-sizing:border-box}
+         body{
+         margin:0;
+         font-family:Inter,system-ui,-apple-system,sans-serif;
+         background:
+         radial-gradient(600px 300px at 80% -10%,rgba(34,211,238,.15),transparent 60%),
+         linear-gradient(180deg,#0b1220,#070b14);
+         color:var(--text);
+         min-height:100vh;
+         }
+         .page{
+         max-width:90%;
+         margin:auto;
+         padding:18px 18px 4px;
+         }
+         /* HEADER BAR */
+         /* HEADER BAR */
+.header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 25px;
+    background: var(--panel-soft);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.35);
+}
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="AI Implementer | AI Freelancer | AI Automation Partner for Small Businesses">
-    <meta property="og:description" content="Helping small businesses streamline operations with AI-driven workflow automation, chatbots, and analytics.">
-    <meta property="og:url" content="https://ai-implementer.netlify.app/">
-    <meta property="og:image" content="https://ai-implementer.netlify.app/images/ai-implementer-logo.png">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="AI Implementer">
-    <meta property="og:locale" content="en_US">
+.logo {
+    height: 45px;
+}
 
-	<!-- Twitter -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="AI Implementer | AI Freelancer | AI Automation Partner for Small Businesses">
-	<meta name="twitter:description" content="Low-cost AI automation and workflow optimization solutions for small businesses.">
-	<meta name="twitter:image" content="https://ai-implementer.netlify.app/images/ai-implementer-logo.png">
-    <!-- -->
-	
-	<!-- Preload critical resources -->
-	<link rel="preload" href="https://cdn.tailwindcss.com" as="script">
-	<link rel="preload" href="https://unpkg.com/lucide@latest" as="script">
-	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
-	<link rel="preload" href="images/ai-implementer-logo.png" as="image">
-  
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://ai-implementer.netlify.app/sitemap.xml">
-  <meta content="Shekhar D" name="author"/>
+.user-area-header {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+}
 
-  <script type="application/ld+json">
-	{
-	  "@context": "https://schema.org",
-	  "@graph": [
-		{
-		  "@type": "WebSite",
-		  "@id": "https://ai-implementer.netlify.app/#website",
-		  "url": "https://ai-implementer.netlify.app/",
-		  "name": "AI Implementer",
-		  "description": "AI Implementer helps small businesses automate workflows, customer support, and operations using affordable AI solutions.",
-		  "publisher": {
-			"@id": "https://ai-implementer.netlify.app/#organization"
-		  },
-		  "potentialAction": {
-			"@type": "SearchAction",
-			"target": "https://ai-implementer.netlify.app/?s={search_term_string}",
-			"query-input": "required name=search_term_string"
-		  },
-		  "inLanguage": "en"
-		},
-		{
-		  "@type": "Organization",
-		  "@id": "https://ai-implementer.netlify.app/#organization",
-		  "name": "AI Implementer",
-		  "url": "https://ai-implementer.netlify.app/",
-		  "logo": {
-			"@type": "ImageObject",
-			"url": "https://ai-implementer.netlify.app/images/ai-implementer-logo.png",
-			"width": 512,
-			"height": 512
-		  },
-		  "sameAs": [
-			"https://x.com/ai-implementer",
-			"https://www.linkedin.com/company/ai-implementer/"
-		  ],
-		  "contactPoint": [
-			{
-			  "@type": "ContactPoint",
-			  "email": "ai.implementer@gmail.com",
-			  "contactType": "Customer Support",
-			  "availableLanguage": ["English"]
-			}
-		  ]
-		},
-		{
-			"@type": "LocalBusiness",
-			"@id": "https://ai-implementer.netlify.app/#localbusiness",
-			"name": "AI Implementer",
-			"image": "https://ai-implementer.netlify.app/images/ai-implementer-logo.png",
-			"description": "Providing AI solutions and workflow automation for small businesses.",
-			"priceRange": "$",
-			"telephone": "+918087558460",
-			"email": "ai.implementer@gmail.com",
-			"url": "https://ai-implementer.netlify.app/"
-		  },
-		  {
-			"@type": "BreadcrumbList",
-			"itemListElement": [
-			  {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ai-implementer.netlify.app/"},
-			  {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://ai-implementer.netlify.app/#services"},
-			  {"@type": "ListItem", "position": 3, "name": "Contact", "item": "https://ai-implementer.netlify.app/#contact"}
-			]
-		  },
-		{
-		  "@type": "ProfessionalService",
-		  "@id": "https://ai-implementer.netlify.app/#business",
-		  "name": "AI Implementer",
-		  "image": "https://ai-implementer.netlify.app/images/ai-implementer-logo.png",
-		  "url": "https://ai-implementer.netlify.app/",
-		  "email": "ai.implementer@gmail.com",
-		  "priceRange": "$",
-		  "description": "AI Implementer provides affordable AI automation services for small businesses — workflow automation, chatbots, and AI-driven tools.",
-		  "serviceType": ["AI Automation", "Workflow Automation", "Customer Support Automation"],
-		  "areaServed": {
-			"@type": "GeoShape",
-			"circle": "0 0 10000000"
-		  },
-		  "address": {
-			"@type": "PostalAddress",
-			"addressCountry": ""
-		  },
-		  "hasOfferCatalog": {
-			"@type": "OfferCatalog",
-			"name": "AI Services",
-			"itemListElement": [
-			  {
-				"@type": "Offer",
-				"itemOffered": {
-				  "@type": "Service",
-				  "name": "AI Workflow Automation"
-				}
-			  },
-			  {
-				"@type": "Offer",
-				"itemOffered": {
-				  "@type": "Service",
-				  "name": "Customer Support Automation"
-				}
-			  },
-			  {
-				"@type": "Offer",
-				"itemOffered": {
-				  "@type": "Service",
-				  "name": "AI Chatbot Setup"
-				}
-			  }
-			]
-		  }
+/* RIGHT MENU */
+.top-menu {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.logged-user {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* MENU LINKS */
+.menu-link {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all .25s ease;
+    position: relative;
+}
+
+/* Hover Glow Effect */
+.menu-link:hover {
+    color: var(--accent);
+}
+
+/* Accent underline animation */
+.menu-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    transition: width .3s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #001018;
+    transition: all .25s ease;
+}
+
+.logout-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(34,211,238,.35);
+}
+
+/* ACTIVE MENU STATE */
+.menu-link.active {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.menu-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+		 
+		 
+         /* HERO — SMALLER */
+         header{
+         padding:5px 2px 2px;
+         border-radius:14px;
+         background:var(--panel-soft);
+         border:1px solid var(--border);
+         margin-bottom:10px;
+         }
+         header h1{
+         font-size:26px;
+         line-height:1.15;
+         margin-bottom:12px;
+         background:linear-gradient(90deg,#22d3ee,#60a5fa);
+         -webkit-background-clip:text;
+         -webkit-text-fill-color:transparent;
+         }
+         header p{
+         font-size:13px;
+         margin-top:6px;
+         margin-bottom:0;
+         color:var(--muted);
+         }
+         /* CARDS */
+         .upload-card{
+		 display: flex;
+		 flex-direction: column;   /* 🔥 important */
+		 align-items: flex-start;  /* left align content */
+         background:var(--panel);
+         border:1px solid var(--border);
+         border-radius:var(--radius);
+         padding:18px;
+         margin-bottom:16px;
+         transition:.2s ease;
+		 align-items: center;
+		 gap: 20px;
+		 flex-wrap: nowrap;   /* prevents wrapping */
+		  width:100%;
+         }
+         .upload-card:hover{
+         border-color:rgba(255,255,255,.18);
+         }
+         .upload-card h2{
+		  margin: 0;
+         font-size:18	px;
+         font-weight:600;         
+         color:var(--accent);
+		 line-height: 1;        /* removes extra vertical height */
+	     display:flex;
+		 align-items: center;   /* force perfect vertical centering */
+		 gap:20px;
+         }
+		 
+		 #uploadForm{
+		  display:flex;
+		  flex-direction:column;
+		  gap:16px;
+		  width:100%;
 		}
-	  ]
-	}
-  </script>
 
+		#uploadForm input[type="file"]{
+		  width:100%;
+		  display:block;
+		}
+		 
+         /* FILE INPUT */
+         input[type="file"]{
+         width:100%;
+         padding:12px;
+         font-size:13px;
+         border-radius:10px;
+         border:1px dashed rgba(255,255,255,.15);
+         background:#0b1220;
+         color:var(--text);
+         transition:.2s ease;
+         }
+         input[type="file"]:hover{
+         border-color:var(--accent);
+         }
+         input[type="file"]::file-selector-button{
+		   margin-right:14px;   /* spacing between button and filename */
+		   padding:6px 14px;
+		   border-radius:999px;
+		   border:none;
+		   background:linear-gradient(135deg,var(--accent),var(--accent-2));
+		   color:#001018;
+		   font-weight:600;
+		   font-size:12px;
+		   cursor:pointer;
+		}
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest">
-  </script>
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-  <style>
-   body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0f172a;
-      color: #e2e8f0;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
-  <style>
-   .dropdown { position: relative; }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #1e293b;
-      min-width: 180px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-      border-radius: 0.5rem;
-      z-index: 20;
-    }
-    .dropdown:focus-within .dropdown-content {
-      display: block;
-    }
-    .dropdown-content a {
-      display: block;
-      padding: 0.75rem 1rem;
-      color: #e2e8f0;
-      text-decoration: none;
-    }
-    .dropdown-content a:hover {
-      background-color: #0f172a;
-      color: #22d3ee;
-    }
-  </style>
-  <style>
-   .dropdown.active .dropdown-content {
-      display: block !important;
-    }
-  </style>
-  
-  <!-- facivon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
-  <!-- facivon -->
+         /* BUTTON */
+         .btn-submit{
+         margin-top:14px;
+         flex:0 0 auto;
+		 width:auto;        /* remove 100% width */
+         padding:12px;
+         font-size:14px;
+         font-weight:700;
+         border-radius:999px;
+         border:none;
+         background:linear-gradient(135deg,var(--accent),var(--accent-2));
+         color:#001018;
+         cursor:pointer;
+         transition:.2s ease;
+		 margin:0;
+         white-space:nowrap;
+         }
+         .btn-submit:hover{
+         transform:translateY(-1px);
+         }
+         .btn-submit:disabled{
+         opacity:.5;
+         cursor:not-allowed;
+         }
+         /* MESSAGE */
+         #message{
+         font-size:14px;
+         color:var(--muted);
+		 min-height: 20px; 
+		 margin-top:6px;
+		  text-align:center;   /* ✅ center text */
+		  width:100%;          /* ensure full width */
+         }
+         /* RESULT */
+         #result{
+         display:none;	
+         margin-top:20px;
+         padding:24px;
+         border-radius:14px;
+         background:#ffffff;
+         color:#0f172a;
+         }
+         #result table{
+         width:100%;
+         border-collapse:collapse;
+         font-size:13px;
+         }
+         #result thead th{
+         background:#0f172a;
+         color:#fff;
+         padding:10px;
+         }
+         #result td{
+         padding:8px 10px;
+         border-bottom:1px solid #e2e8f0;
+         }
+         #result tbody tr:nth-child(even){
+         background:#f1f5f9;
+         }
+         .gain{color:var(--success);font-weight:600}
+         .loss{color:var(--error);font-weight:600}
+         /* PILLS */
+         .pill-selector{
+         display:flex;
+         flex-wrap:wrap;
+         gap:8px;
+         margin-top:8px;
+		 align-items: center;  
+         }
+         .pill-selector input[type="radio"]{
+         display:none;
+         }
+         .pill{
+         padding:8px 18px;
+         font-size:12px;
+         border-radius:999px;
+         border:1px solid var(--border);
+         background:#0b1220;
+         color:var(--muted);
+         cursor:pointer;
+         transition:.2s ease;
+		 display: flex;
+		 align-items: center;  
+         }
+         .pill:hover{
+         border-color:var(--accent);
+         color:var(--accent);
+         }
+         .pill-selector input[type="radio"]:checked + .pill{
+         background:linear-gradient(135deg,var(--accent),var(--accent-2));
+         color:#001018;
+         font-weight:600;
+		 align-items: center; 
+         }
+         /* FOOTER */
+         .footer-bar{
+         display:flex;
+         justify-content:space-between;
+         align-items:center;
+         padding:12px 20px;
+         font-size:12px;
+         border-top:1px solid var(--border);
+         color:var(--muted);
+         margin-top:2px;
+         width=90%;
+         }
+         .footer-status{
+         display:flex;
+         gap:18px;
+         }
+         .status-item{
+         display:flex;
+         align-items:center;
+         gap:6px;
+         }
+         .dot{
+         width:7px;
+         height:7px;
+         border-radius:50%;
+         background:#6b7280;
+         }
+         .dot.up{background:var(--success)}
+         .dot.down{background:var(--error)}
+         footer a{
+         color:var(--accent);
+         text-decoration:none;
+         }
+         /* PRINT */
+         @media print{
+         header,.upload-card,#message,.top-menu{display:none!important}
+         body{background:#fff!important}
+         #result{display:block!important;padding:0}
+         }
+         /* Top Highlight Strip */
+         header#top{
+         background: linear-gradient(
+         90deg,
+         rgba(34,211,238,.08),
+         rgba(59,130,246,.08)
+         ),
+         var(--panel-soft);
+         border: 1px solid rgba(255,255,255,.08);
+         border-radius: 12px;
+         backdrop-filter: blur(6px);
+         box-shadow:
+         0 0 0 1px rgba(255,255,255,.04),
+         0 8px 20px rgba(0,0,0,.35);
+         margin-bottom: 2px;
+         }
+         /* Subtle glow line on top */
+         header#top::before{
+         content:"";
+         display:block;
+         height:2px;
+         width:100%;
+         background: linear-gradient(90deg,#22d3ee,#3b82f6);
+         border-radius: 12px 12px 0 0;
+         }
+		 .report-type-card{
+		  display:flex;
+		  flex-direction:row;
+		  align-items:center;
+		  gap:20px;
+		}
 
- </head>
- <body class="antialiased">
-  <!-- Navbar -->
-  <!-- Navbar -->
-  <nav class="bg-gray-900 border-b border-gray-700 sticky top-0 z-50">
-   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
-    <div class="flex items-center space-x-3">
-     <a href="#top">
-      <img alt="AI Implementer Logo" class="w-25 h-10 object-contain" src="images/ai-implementer-logo.png"/>
-     </a>
-    </div>
-    <div class="flex items-center space-x-6 text-sm font-medium">
-     <!-- Home -->
-     <a class="text-cyan-400" href="index.html">
-      Home
-     </a>
-     <!-- About Dropdown -->
-     <div class="dropdown relative">
-      <a class="hover:text-cyan-400 focus:text-cyan-400 transition" href="#about">
-       About ▾
-      </a>
-      <div class="dropdown-content absolute hidden group-focus-within:block bg-gray-800 mt-2 rounded-lg shadow-lg">
-       <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="#about">
-        About Me
-       </a>
-       <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="#how">
-        How Do We Do
-       </a>
-       <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="#help">
-        How I Help
-       </a>
-	   <!-- Blogs -->
-       <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="/posts/blog.html">
-       Blogs
-       </a>
-      </div>
-     </div>
-     <!-- Solutions Dropdown -->
-     <div class="dropdown relative">
-      <a class="hover:text-cyan-400 focus:text-cyan-400 transition" href="#solution">
-       AI Offerings ▾
-      </a>
-      <div class="dropdown-content absolute hidden group-focus-within:block bg-gray-800 mt-2 rounded-lg shadow-lg">
-       <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="#services">
-        Services
-       </a>
-	   <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="#solution">
-        AI Solutions
-       </a>
-       <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="#solutions-overview">
-        Solutions Overview
-       </a>
-      </div>
-     </div>
-	 
-     <!-- Contact Dropdown -->
-     <div class="dropdown relative">
-      <a class="hover:text-cyan-400 focus:text-cyan-400 transition" href="#contact">
-       Contact ▾
-      </a>
-      <div class="dropdown-content absolute hidden group-focus-within:block bg-gray-800 mt-2 rounded-lg shadow-lg">
-       <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="faq.html">
-        FAQs
-       </a>
-	   <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="enquiry.html">
-        Send Enquiry
-       </a>
-       <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="#contact">
-        Get in Touch
-       </a>
-      </div>
-     </div>
-	 
-     <!-- Social Icons Starts-->	 
-	 <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+		.report-type-card h2{
+		  margin:0;
+		  white-space:nowrap;
+		}
 
-     <div class="flex space-x-2 text-cyan-400 text-2xl">
-	  <a alt="LinkedIn" title="Linked In" href="https://www.linkedin.com/company/ai-implementer/?viewAsMember=true" target="_blank" ><i class="ri-linkedin-box-line hover:text-cyan-300"></i></a>
-	  
-	  <a alt="Facebook" title="Facebook" href="https://www.facebook.com/profile.php?id=61581913815232" target="_blank"><i class="ri-facebook-circle-line hover:text-cyan-300"></i></a>
-	  
-	  <a alt="Instagram" title="Instagram" href="https://www.instagram.com/ai.implementer/" target="_blank"><i class="ri-instagram-line hover:text-cyan-300"></i></a>
-	 </div>
-	 <!-- Social Icons Ends -->
-	 
-    </div>
-   </div>
-  </nav>
-  <!-- Hero Section -->
-  <header class="relative bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-center py-28 px-6" id="top">
-   <div class="max-w-4xl mx-auto">
-    <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
-     Smart
-     <span class="text-cyan-400">
-      AI Solutions
-     </span>
-     for Small Businesses
-    </h1>
-    <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10">
-     Empowering small businesses to streamline daily operations, automate repetitive processes, and enhance customer engagement through intelligent automation, conversational chatbots, and tailor-made AI solutions designed to drive growth and efficiency.
-    </p>
-    <a class="inline-block bg-cyan-500 text-gray-900 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-cyan-400 transition transform hover:scale-105" href="#contact">
-     Let’s Work Together
-    </a>
-   </div>
-  </header>
-  <!-- About Section -->
-  <section class="py-16 px-6 bg-gray-900" id="about">
-   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-    <!-- Left Column: Image -->
-    <div class="flex justify-center">
-     <img alt="Shekhar D - AI Implementer" class="rounded-2xl shadow-lg w-64 h-auto object-cover hover:scale-105 transition-transform duration-500" src="images/shekhar_pic.png"/>
-    </div>
-    <!-- Right Column: Text -->
-    <div>
-     <h3 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-4">
-      About Me
-     </h3>
-     <p class="text-gray-300 leading-relaxed mb-3">
-      I’m an AI enthusiast and technology partner/implementer/freelancer with over 24 years of experience in the IT industry,
-        collaborating with both domestic and international clients. I combine a strong technical foundation with
-        proven leadership in project delivery to ensure every initiative drives measurable business outcomes.
-     </p>
-     <p class="text-gray-300 leading-relaxed mb-3">
-      With 16+ years as an Implementation Manager, I’ve successfully led projects using both Agile and Waterfall
-        methodologies — ensuring efficiency, quality, and business alignment throughout.
-     </p>
-     <p class="text-gray-300 leading-relaxed mb-3">
-      Over the past 11+ years, I’ve contributed extensively to product development in startup ecosystems,
-        balancing strategic vision with hands-on execution from concept to launch.
-     </p>
-     <p class="text-gray-300 leading-relaxed mb-6">
-      I’m passionate about helping small and mid-sized businesses harness AI and automation to streamline
-        operations, boost productivity, and achieve sustainable growth.
-     </p>
-     <!-- LinkedIn Profile -->
-     <a class="inline-flex items-center space-x-2 text-cyan-400 font-medium hover:text-cyan-300 transition" href="https://www.linkedin.com/in/chandrashekhar-dhere-237ab44/" target="_blank">
-      <img alt="LinkedIn" class="w-5 h-5" src="https://cdn-icons-png.flaticon.com/512/174/174857.png"/>
-      <span>
-       Connect with me on LinkedIn
-      </span>
-     </a>
-    </div>
-   </div>
-  </section>
-  <!-- Services Section -->
-  <section class="py-20 px-6" id="services">
-   <div class="max-w-6xl mx-auto">
-    <h3 class="text-4xl font-bold text-cyan-400 text-center mb-12">
-     Services
-    </h3>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-     <div class="bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105">
-      <h4 class="text-xl font-semibold text-cyan-400 mb-3">
-       Product &amp; Service Enhancement
-      </h4>
-      <p class="text-gray-300 mb-4">
-       Enhance existing offerings with AI-driven improvements and smarter configurations.
-      </p>
-      <ul class="list-disc list-inside text-gray-400 space-y-2">
-       <li>
-        Personalized user experiences
-       </li>
-       <li>
-        AI-generated marketing content
-       </li>
-       <li>
-        Smart product recommendations
-       </li>
-      </ul>
-     </div>
-     <div class="bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105">
-      <h4 class="text-xl font-semibold text-cyan-400 mb-3">
-       Data Analytics &amp; Insights
-      </h4>
-      <p class="text-gray-300 mb-4">
-       Turn data into actionable insights and informed decisions.
-      </p>
-      <ul class="list-disc list-inside text-gray-400 space-y-2">
-       <li>
-        Predictive analytics &amp; trend forecasting
-       </li>
-       <li>
-        Natural language text insights
-       </li>
-       <li>
-        Computer vision analytics
-       </li>
-      </ul>
-     </div>
-     <div class="bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105">
-      <h4 class="text-xl font-semibold text-cyan-400 mb-3">
-       Process Automation
-      </h4>
-      <p class="text-gray-300 mb-4">
-       Automate repetitive tasks for improved productivity.
-      </p>
-      <ul class="list-disc list-inside text-gray-400 space-y-2">
-       <li>
-        Workflow &amp; process automation
-       </li>
-       <li>
-        AI-powered chatbots
-       </li>
-       <li>
-        Smart task prioritization
-       </li>
-      </ul>
-     </div>
-    </div>
-   </div>
-  </section>
-  <!-- How do we do Section -->
-  <section class="py-20 px-6 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900" id="how">
-   <div class="max-w-6xl mx-auto text-center">
-    <h3 class="text-4xl font-bold text-cyan-400 mb-12">
-     How do we do
-    </h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-     <div class="bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105">
-      <h4 class="text-xl font-semibold text-cyan-400 mb-3">
-       Assess what you have
-      </h4>
-      <p class="text-gray-300 leading-relaxed">
-       We analyze your processes, ideas, products, and services to define project scope and guide solution development. 
-          Our analysis ensures that every solution aligns with your vision and goals, driving innovation and success.
-      </p>
-     </div>
-     <div class="bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105">
-      <h4 class="text-xl font-semibold text-cyan-400 mb-3">
-       Evaluate the potential
-      </h4>
-      <p class="text-gray-300 leading-relaxed">
-       We put your goals at the heart of our design process. Collaborating with you, we craft intuitive and robust 
-          solutions using cutting-edge technologies — delivering results that are both functional and visually striking.
-      </p>
-     </div>
-     <div class="bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105">
-      <h4 class="text-xl font-semibold text-cyan-400 mb-3">
-       Implement the solution
-      </h4>
-      <p class="text-gray-300 leading-relaxed">
-       We turn your vision into reality through smart platforms, seamless integrations, and measurable results.
-      </p>
-     </div>
-    </div>
-    <!-- Flow Diagram Image -->
-    <div class="relative flex justify-center">
-     <div class="bg-gray-800 p-4 rounded-3xl shadow-2xl max-w-4xl w-full hover:shadow-cyan-800/30 transition">
-      <img alt="AI Implementation Flow" class="rounded-2xl w-full object-contain brightness-95 hover:brightness-105 transition-transform duration-500 hover:scale-105" src="images/ai-flow.png"/>
-      <p class="text-sm text-gray-400 mt-4 italic">
-       Our streamlined AI implementation flow
-      </p>
-     </div>
-    </div>
-   </div>
-  </section>
-  <!-- How I Can Help Section -->
-  <section class="py-20 px-6 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900" id="help">
-   <div class="max-w-6xl mx-auto text-center">
-    <h3 class="text-4xl font-bold text-cyan-400 mb-12">
-     How I Can Help
-    </h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-     <div class="bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:scale-105">
-      <h4 class="text-xl font-semibold text-cyan-400 mb-3">
-       Save Costs
-      </h4>
-      <p class="text-gray-300 leading-relaxed">
-       Reduce repetitive work with automation and AI assistance, cutting costs while boosting output.
-      </p>
-     </div>
-     <div class="bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:scale-105">
-      <h4 class="text-xl font-semibold text-cyan-400 mb-3">
-       Boost Efficiency
-      </h4>
-      <p class="text-gray-300 leading-relaxed">
-       Streamline workflows and simplify business operations to improve turnaround time and productivity.
-      </p>
-     </div>
-     <div class="bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:scale-105">
-      <h4 class="text-xl font-semibold text-cyan-400 mb-3">
-       Scale Effortlessly
-      </h4>
-      <p class="text-gray-300 leading-relaxed">
-       Build scalable systems that grow with your business without increasing manpower or overhead.
-      </p>
-     </div>
-     <div class="bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:scale-105">
-      <h4 class="text-xl font-semibold text-cyan-400 mb-3">
-       Enhance Engagement
-      </h4>
-      <p class="text-gray-300 leading-relaxed">
-       Improve customer experience with personalized AI-driven communication and insights.
-      </p>
-     </div>
-    </div>
-   </div>
-  </section>
-  <!-- Solutions Section -->
-  <section class="py-20 px-6" id="solution">
-   <div class="max-w-6xl mx-auto text-center">
-    <h3 class="text-4xl font-bold text-cyan-400 mb-12">
-     AI Solutions
-    </h3>
-    <p class="text-gray-300 max-w-3xl mx-auto mb-12">
-     Explore a range of AI-driven solutions that simplify business operations, enhance decision-making, and deliver customer delight.
-    </p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-     <div class="bg-gray-800 p-8 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105">
-      <i class="w-10 h-10 text-cyan-400 mx-auto mb-4" data-lucide="bot">
-      </i>
-      <h4 class="text-xl font-semibold text-cyan-400 mb-3">
-       AI Chat Assistants
-      </h4>
-      <p class="text-gray-300">
-       Custom-trained AI chatbots to handle FAQs, lead qualification, and customer support seamlessly.
-      </p>
-     </div>
-     <div class="bg-gray-800 p-8 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105">
-      <i class="w-10 h-10 text-cyan-400 mx-auto mb-4" data-lucide="workflow">
-      </i>
-      <h4 class="text-xl font-semibold text-cyan-400 mb-3">
-       Smart Workflow Automation
-      </h4>
-      <p class="text-gray-300">
-       Integrate AI with tools like Google Sheets, CRMs, and APIs to reduce manual tasks and boost accuracy.
-      </p>
-     </div>
-     <div class="bg-gray-800 p-8 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105">
-      <i class="w-10 h-10 text-cyan-400 mx-auto mb-4" data-lucide="line-chart">
-      </i>
-      <h4 class="text-xl font-semibold text-cyan-400 mb-3">
-       Predictive Insights
-      </h4>
-      <p class="text-gray-300">
-       Leverage data analytics to forecast trends, anticipate customer needs, and make informed decisions.
-      </p>
-     </div>
-    </div>
-   </div>
-   <section class="bg-gray-900 py-20 px-6" id="solutions-overview">
-    <div class="max-w-5xl mx-auto text-center">
-     <h2 class="text-3xl font-bold text-cyan-400 mb-4">
-      Solutions Overview
-     </h2>
-     <p class="text-gray-300 mb-8">
-      Click a solution name below to jump directly to its detailed section.
-     </p>
-     <div class="overflow-x-auto">
-      <table class="min-w-full border border-gray-700 rounded-2xl overflow-hidden shadow-lg">
-       <thead class="bg-gray-800/80 text-cyan-400 uppercase text-sm tracking-wide">
-        <tr>
-         <th class="py-3 px-6 border-b border-gray-700 text-left">
-          Solution Name
-         </th>
-         <th class="py-3 px-6 border-b border-gray-700 text-left">
-          Category
-         </th>
-        </tr>
-       </thead>
-       <tbody class="bg-gray-900/60 text-gray-300 text-sm">
-	   <tr class="hover:bg-gray-800/80 transition">
-         <td class="py-3 px-6 font-medium text-left">
-          <a class="text-cyan-400 hover:underline" href="#lead-capture-agent">
-           Lead Capture &amp; Auto Response Agent
-          </a>
-         </td>
-         <td class="py-3 px-6 text-left">
-          Marketing Automation AI
-         </td>
-        </tr>
-		<tr class="hover:bg-gray-800/80 transition">
-		  <td class="py-3 px-6 font-medium text-left">
-			<a class="text-cyan-400 hover:underline" href="#data-analysis-report">
-			  Data Analysis & Reporting Agent
-			</a>
-		  </td>
-		  <td class="py-3 px-6 text-left">
-			Business Intelligence & Insights AI
-		  </td>
-		</tr>
-		<tr class="hover:bg-gray-800/80 transition">
-		  <td class="py-3 px-6 font-medium text-left">
-			<a class="text-cyan-400 hover:underline" href="#automated-social-posting">
-			  Automated LinkedIn / Facebook Posting Agent
-			</a>
-		  </td>
-		  <td class="py-3 px-6 text-left">
-			Marketing & Social Automation AI
-		  </td>
-		</tr>
-		<tr class="hover:bg-gray-800/80 transition">
-		  <td class="py-3 px-6 font-medium text-left">
-			<a class="text-cyan-400 hover:underline" href="#customer-support-automation">
-			  Customer Support & FAQ Automation
-			</a>
-		  </td>
-		  <td class="py-3 px-6 text-left">
-			Support & Engagement AI
-		  </td>
-		</tr>		
-		<tr class="hover:bg-gray-800/80 transition">
-         <td class="py-3 px-6 font-medium text-left">
-          <a class="text-cyan-400 hover:underline" href="#smart-portfolio-review">
-           Smart Portfolio Review Report Generator
-          </a>
-         </td>
-         <td class="py-3 px-6 text-left">
-          Scheduling &amp; Operations AI
-         </td>
-        </tr>		
-        <tr class="hover:bg-gray-800/80 transition">
-         <td class="py-3 px-6 font-medium text-left">
-          <a class="text-cyan-400 hover:underline" href="#appointment-booking-agent">
-           Appointment Booking Agent
-          </a>
-         </td>
-         <td class="py-3 px-6 text-left">
-          Wealth & Investment AI
-         </td>
-        </tr>		
-        <tr class="hover:bg-gray-800/80 transition">
-         <td class="py-3 px-6 font-medium text-left">
-          <a class="text-cyan-400 hover:underline" href="#whatsapp-assistant">
-           WhatsApp as Your All-in-One Business Assistant
-          </a>
-         </td>
-         <td class="py-3 px-6 text-left">
-          Communication AI
-         </td>
-        </tr>
-        <tr class="hover:bg-gray-800/80 transition">
-         <td class="py-3 px-6 font-medium text-left">
-          <a class="text-cyan-400 hover:underline" href="#real-estate-manager">
-           Real Estate Manager
-          </a>
-         </td>
-         <td class="py-3 px-6 text-left">
-          Business Management AI
-         </td>
-        </tr>
-       </tbody>
-      </table>
-      <br/>
-      <p class="text-gray-300 mb-8 font-small text-left">
-       * These "Solutions Overview" showcase what’s possible for a Small Business or Start Ups — tailor-made AI solutions can be designed, developed, and implemented to meet your unique business needs.
-      </p>
-     </div>
-    </div>
-   </section>
-   <section class="py-16 px-6 bg-gray-900" id="proposed-solutions">
-    <div class="max-w-6xl mx-auto space-y-16">
-	
-	<!-- Lead Capture & Auto Response -->
-     <div class="solution-item bg-gray-800/80 p-8 rounded-3xl shadow-lg hover:shadow-cyan-700/30 transition-transform transform hover:-translate-y-1" id="lead-capture-agent">
-      <div class="flex items-center justify-between mb-6">
-       <div class="flex items-center">
-        <i class="w-8 h-8 text-cyan-400 mr-3" data-lucide="inbox">
-        </i>
-        <h2 class="text-2xl font-bold text-cyan-400">
-         Lead Capture &amp; Auto Response Agent
-        </h2>
-       </div>
-       <span class="text-sm text-gray-400 italic">
-        Category: Marketing Automation AI
-       </span>
-      </div>
-      <p class="text-gray-300 mb-8 leading-relaxed">
-       Automatically capture new leads from forms or websites, store them in Google Sheets, and send instant personalized responses to both the lead and your team.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-       <div class="bg-gray-900/60 rounded-2xl p-6">
-        <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-         Features
-        </h3>
-        <ul class="list-disc list-inside space-y-1 text-gray-300">
-         <li>
-          Auto lead capture from forms
-         </li>
-         <li>
-          Google Sheets integration
-         </li>
-         <li>
-          Instant personalized response
-         </li>
-         <li>
-          Team notifications
-         </li>
-        </ul>
-       </div>
-       <div class="bg-gray-900/60 rounded-2xl p-6">
-        <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-         How It Works
-        </h3>
-        <ol class="list-decimal list-inside space-y-1 text-gray-300">
-         <li>
-          New submission triggers lead capture
-         </li>
-         <li>
-          AI sends confirmation emails
-         </li>
-         <li>
-          Notifies business for follow-up
-         </li>
-         <li>
-          Logs all entries for analytics
-         </li>
-        </ol>
-       </div>
-       <div class="bg-gray-900/60 rounded-2xl p-6">
-        <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-         Benefits
-        </h3>
-        <ul class="list-disc list-inside space-y-1 text-gray-300">
-         <li>
-          Instant engagement
-         </li>
-         <li>
-          Zero missed leads
-         </li>
-         <li>
-          Structured data collection
-         </li>
-         <li>
-          Faster conversions
-         </li>
-        </ul>
-       </div>
-      </div>
-     </div>
+		.report-type-card .pill-selector{
+		  margin-top:0;
+		}
 		
-	<!-- Data Analysis & Reporting -->
-	<div class="solution-item bg-gray-800/80 p-8 rounded-3xl shadow-lg hover:shadow-cyan-700/30 transition-transform transform hover:-translate-y-1" id="data-analysis-report">
-	  <div class="flex items-center justify-between mb-6">
-		<div class="flex items-center">
-		  <i class="w-8 h-8 text-cyan-400 mr-3" data-lucide="bar-chart-3"></i>
-		  <h2 class="text-2xl font-bold text-cyan-400">
-			Data Analysis & Reporting Agent
-		  </h2>
-		</div>
-		<span class="text-sm text-gray-400 italic">
-		  Category: Business Intelligence & Insights AI
-		</span>
-	  </div>
+		.nav a{
+    color:#8fbcd4; /* muted cyan text */
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+    transition:all 0.3s ease;
+}
 
-	  <p class="text-gray-300 mb-8 leading-relaxed">
-		The <strong>Data Analysis & Reporting</strong> solution automates data interpretation and visualization from tools like <strong>Google Sheets, Excel, CRMs, or databases</strong>. It delivers clear, AI-generated summaries, dashboards, and reports (in mail) for management review — helping small businesses make faster, informed decisions.
-	  </p>
+.nav a:hover{
+    color:#38bdf8; /* cyan highlight */
+    text-shadow:0 0 8px rgba(56,189,248,0.6);
+}
 
-	  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-		<div class="bg-gray-900/60 rounded-2xl p-6">
-		  <h3 class="text-lg font-semibold text-cyan-400 mb-3">Key Features</h3>
-		  <ul class="list-disc list-inside space-y-1 text-gray-300">
-			<li>Automated report generation in Email</li>
-			<li>Real-time updates</li>
-			<li>AI-powered trend & anomaly detection</li>
-			<li>Multi-source data integration</li>
-			<li>Custom KPI monitoring</li>
-		  </ul>
-		</div>
 
-		<div class="bg-gray-900/60 rounded-2xl p-6">
-		  <h3 class="text-lg font-semibold text-cyan-400 mb-3">How It Works</h3>
-		  <ol class="list-decimal list-inside space-y-1 text-gray-300">
-			<li>Connect your data sources (Sheets, CRMs, Databases)</li>
-			<li>AI extracts and analyzes key insights</li>
-			<li>Automated Reports delivered to Email</li>
-			<li>Scheduled or event-based delivery</li>
-			<li>Summaries available via WhatsApp or Email</li>
-		  </ol>
-		</div>
 
-		<div class="bg-gray-900/60 rounded-2xl p-6">
-		  <h3 class="text-lg font-semibold text-cyan-400 mb-3">Benefits</h3>
-		  <ul class="list-disc list-inside space-y-1 text-gray-300">
-			<li>Instant business insights</li>
-			<li>Eliminates manual data crunching</li>
-			<li>Professional, export-ready reports</li>
-			<li>Improved decision accuracy</li>
-			<li>Time-saving automation for managers</li>
-		  </ul>
-		</div>
-	  </div>
-	</div>
+      </style>
+      <!-- Tailwind CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <!-- Google Font -->
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+   </head>
+   <body>
+      <div class="page">
+         <!-- ===== TOP ROW ===== -->
+		<div class="header-bar">
+			<img class="logo" 
+				 src="https://ai-implementer.netlify.app/images/ai-implementer-logo.png">
 
-	<!-- Automated LinkedIn / Facebook Posting -->
-	<div class="solution-item bg-gray-800/80 p-8 rounded-3xl shadow-lg hover:shadow-cyan-700/30 transition-transform transform hover:-translate-y-1" id="automated-social-posting">
-	  <div class="flex items-center justify-between mb-6">
-		<div class="flex items-center">
-		  <i class="w-8 h-8 text-cyan-400 mr-3" data-lucide="share-2"></i>
-		  <h2 class="text-2xl font-bold text-cyan-400">
-			Automated LinkedIn / Facebook Posting Agent
-		  </h2>
-		</div>
-		<span class="text-sm text-gray-400 italic">
-		  Category: Marketing & Social Automation AI
-		</span>
-	  </div>
+			<div class="user-area-header">
+				Smart Portfolio Review Report Generator
+			</div>
 
-	  <p class="text-gray-300 mb-8 leading-relaxed">
-		The <strong>Automated LinkedIn / Facebook Posting</strong> solution helps businesses and professionals stay active on social media without manual effort. Posts can be <strong>scheduled or triggered directly from a WhatsApp interface</strong>, offering unmatched convenience and personalization.
-	  </p>
-	  <p class="text-gray-300 mb-8 leading-relaxed">
-		Using simple WhatsApp commands, users can draft, preview, and post updates instantly — or schedule them for later. The system integrates with <strong>LinkedIn and Facebook APIs</strong> and supports auto-caption generation and content tagging to maximize engagement.
-	  </p>
+			<!-- ===== RIGHT MENU ===== -->
+			<div class="top-menu">
+				<span class="logged-user">
+					Logged in as: <strong id="loggedUser"></strong>
+				</span>
 
-	  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-		<div class="bg-gray-900/60 rounded-2xl p-6">
-		  <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-			Key Features
-		  </h3>
-		  <ul class="list-disc list-inside space-y-1 text-gray-300">
-			<li>WhatsApp-triggered post creation</li>
-			<li>LinkedIn & Facebook integration</li>
-			<li>Scheduling and auto-posting options</li>
-			<li>Smart caption generation</li>
-			<li>Content personalization by topic or target</li>
-		  </ul>
+				<a href="index.html"
+				   class="menu-link active"
+				   onclick="return false;">
+				  Dashboard
+				</a>
+				<a href="faq.html" class="menu-link">FAQ</a>
+				<button class="menu-link logout-btn" onclick="logout()">
+					Logout
+				</button>
+
+			</div>
+
 		</div>
 
-		<div class="bg-gray-900/60 rounded-2xl p-6">
-		  <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-			How It Works
-		  </h3>
-		  <ol class="list-decimal list-inside space-y-1 text-gray-300">
-			<li>User sends a message via WhatsApp</li>
-			<li>AI generates or refines post content</li>
-			<li>User confirms or edits the draft</li>
-			<li>AI schedules or posts instantly to LinkedIn/Facebook (if required email approval step can be added)</li>
-			<li>Confirmation and engagement summary shared back via WhatsApp</li>
-		  </ol>
-		</div>
-
-		<div class="bg-gray-900/60 rounded-2xl p-6">
-		  <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-			Benefits
-		  </h3>
-		  <ul class="list-disc list-inside space-y-1 text-gray-300">
-			<li>Zero manual posting effort</li>
-			<li>Maintain consistent online presence</li>
-			<li>Boost social engagement automatically</li>
-			<li>Convenient WhatsApp-based control</li>
-			<li>Time-efficient content management</li>
-		  </ul>
-		</div>
-	  </div>
-	</div>
-
-	<!-- Customer Support & FAQ Automation -->
-	<div class="solution-item bg-gray-800/80 p-8 rounded-3xl shadow-lg hover:shadow-cyan-700/30 transition-transform transform hover:-translate-y-1" id="customer-support-automation">
-	  <div class="flex items-center justify-between mb-6">
-		<div class="flex items-center">
-		  <i class="w-8 h-8 text-cyan-400 mr-3" data-lucide="headphones"></i>
-		  <h2 class="text-2xl font-bold text-cyan-400">
-			Customer Support & FAQ Automation
-		  </h2>
-		</div>
-		<span class="text-sm text-gray-400 italic">
-		  Category: Support & Engagement AI
-		</span>
-	  </div>
-
-	  <p class="text-gray-300 mb-8 leading-relaxed">
-		Customer Support & FAQ Automation uses <strong>AI-powered chatbots, virtual assistants, and workflow automation tools</strong> to handle repetitive customer queries, provide instant answers, and escalate complex issues to human agents when necessary.
-	  </p>
-	  <p class="text-gray-300 mb-8 leading-relaxed">
-		It enables businesses to deliver <strong>24/7 support across multiple channels</strong> (website, WhatsApp, and email) <u>without significantly increasing staffing costs</u>. Powered by <strong>Natural Language Processing (NLP)</strong>, it understands customer questions, searches through a pre-defined knowledge base, and delivers accurate answers in seconds — learning over time to improve accuracy, personalize replies, and identify recurring issues.
-	  </p>
-	  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-		<div class="bg-gray-900/60 rounded-2xl p-6">
-		  <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-			Key Features
-		  </h3>
-		  <ul class="list-disc list-inside space-y-1 text-gray-300">
-			<li>AI Chatbots & Virtual Assistants</li>
-			<li>Multi-channel support (Web, WhatsApp, Email)</li>
-			<li>Knowledge Base & FAQ integration</li>
-			<li>Smart escalation to human agents</li>
-			<li>Continuous learning from interactions</li>
-		  </ul>
-		</div>
-		<div class="bg-gray-900/60 rounded-2xl p-6">
-		  <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-			How It Works
-		  </h3>
-		  <ol class="list-decimal list-inside space-y-1 text-gray-300">
-			<li>User initiates a support query</li>
-			<li>AI interprets and searches knowledge base</li>
-			<li>Provides instant, context-aware response</li>
-			<li>Escalates complex queries to human team</li>
-			<li>Logs data for analysis and improvement</li>
-		  </ol>
-		</div>
-		<div class="bg-gray-900/60 rounded-2xl p-6">
-		  <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-			Benefits
-		  </h3>
-		  <ul class="list-disc list-inside space-y-1 text-gray-300">
-			<li>24/7 instant customer support</li>
-			<li>Reduced operational costs</li>
-			<li>Higher customer satisfaction</li>
-			<li>Faster issue resolution</li>
-			<li>Improved lead conversion</li>
-		  </ul>
-		</div>
-	  </div>
-	</div>
-
-	
-	<!-- Smart Portfolio Review Report Generator -->
-	<div class="solution-item bg-gray-800/80 p-8 rounded-3xl shadow-lg hover:shadow-cyan-700/30 transition-transform transform hover:-translate-y-1" id="smart-portfolio-review">
-
-	  <div class="flex items-center justify-between mb-6">
-		<div class="flex items-center">
-		  <i class="w-8 h-8 text-cyan-400 mr-3" data-lucide="bar-chart-3"></i>
-		  <h2 class="text-2xl font-bold text-cyan-400">
-			Smart Portfolio Review Report Generator
-		  </h2>
-		</div>
-		<span class="text-sm text-gray-400 italic">
-		  Category: Wealth & Investment AI
-		</span>
-	  </div>
-
-	  <p class="text-gray-300 mb-8 leading-relaxed">
-		Smart Portfolio Review Report Generator leverages <strong>AI-driven financial analysis</strong> to evaluate your mutual fund and investment portfolio, helping you understand where your money is invested, how it is performing, and where improvements are needed.
-	  </p>
-
-	  <p class="text-gray-300 mb-8 leading-relaxed">
-		By analyzing uploaded portfolio statements, it delivers <strong>fund-wise performance insights, benchmark comparisons, risk assessment, and rebalancing suggestions</strong>. The system transforms complex data into <u>clear, investor-friendly reports</u> that support better financial decisions and long-term wealth growth.
-	  </p>
-
-	  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-
-		<div class="bg-gray-900/60 rounded-2xl p-6">
-		  <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-			Key Features
-		  </h3>
-		  <ul class="list-disc list-inside space-y-1 text-gray-300">
-			<li>Fund-wise performance analysis</li>
-			<li>Benchmark & index comparison</li>
-			<li>Risk & asset allocation review</li>
-			<li>Smart rebalancing recommendations</li>
-			<li>Downloadable investor-friendly reports</li>
-		  </ul>
-		</div>
-
-		<div class="bg-gray-900/60 rounded-2xl p-6">
-		  <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-			How It Works
-		  </h3>
-		  <ol class="list-decimal list-inside space-y-1 text-gray-300">
-			<li>User uploads portfolio or CAS PDF</li>
-			<li>AI extracts and structures investment data</li>
-			<li>Performance and risk metrics are evaluated</li>
-			<li>Funds are compared with benchmarks</li>
-			<li>Actionable insights and reports are generated</li>
-		  </ol>
-		</div>
-
-		<div class="bg-gray-900/60 rounded-2xl p-6">
-		  <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-			Benefits
-		  </h3>
-		  <ul class="list-disc list-inside space-y-1 text-gray-300">
-			<li>Clear visibility into portfolio health</li>
-			<li>Identify underperforming investments</li>
-			<li>Improved risk-adjusted returns</li>
-			<li>Data-backed rebalancing decisions</li>
-			<li>Greater confidence in long-term investing</li>
-		  </ul>
-		</div>
-
-	  </div>
-	</div>
-	
-	 <!-- Appointment Booking Agent -->
-     <div class="solution-item bg-gray-800/80 p-8 rounded-3xl shadow-lg hover:shadow-cyan-700/30 transition-transform transform hover:-translate-y-1" id="appointment-booking-agent">
-      <div class="flex items-center justify-between mb-6">
-       <div class="flex items-center">
-        <i class="w-8 h-8 text-cyan-400 mr-3" data-lucide="calendar">
-        </i>
-        <h2 class="text-2xl font-bold text-cyan-400">
-         Appointment Booking Agent
-        </h2>
-       </div>
-       <span class="text-sm text-gray-400 italic">
-        Category: Scheduling &amp; Operations AI
-       </span>
+         <!-- Hero Section -->
+         <header class="relative bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-center px-2" id="top">
+            <div class="max-w-4xl mx-auto">
+               <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-1">
+                  Understand where your money is invested, how it is performing,
+                  and what adjustments can improve balance.
+               </p>
+            </div>
+         </header>
+         <div class="upload-card report-type-card">
+            <h2>Select Report Type:</h2>
+            <div class="pill-selector">
+               <input type="radio" id="summary" name="reportType" value="summary" checked>
+						<label for="summary" class="pill">Portfolio Overview</label>
+			   <input type="radio" id="fund-performance" name="reportType" value="fund-performance" >
+						<label for="fund-performance" class="pill">Fund Performance Analysis</label>
+               <input type="radio" id="rebalancing" name="reportType" value="rebalancing">
+						<label for="rebalancing" class="pill">Smart Rebalancing</label>
+               <input type="radio" id="monthly" name="reportType" value="monthly">
+						<label for="monthly" class="pill">Monthly Insights</label>
+				<input type="radio" id="myPortfolioView" name="reportType" value="myPortfolioView">
+						<label for="myPortfolioView" class="pill">My Portfolio View</label>
+						
+            </div>
+         </div>
+         <div class="upload-card">
+            <h2>Upload Portfolio PDF</h2>
+            <form id="uploadForm">
+               <input type="file" id="fileInput" accept=".pdf" required>
+               <button
+                  class="btn-submit"
+                  id="submitBtn"
+                  type="submit"
+                  >
+               Upload & Generate Analysis Report
+               </button>
+			   
+			   <div id="message"></div>
+            </form>
+			
+            
+			
+         </div>
+         <div id="result"></div>
+         <footer class="footer-bar">
+            <div class="footer-status">
+               <div id="portfolioServiceStatus" class="status-item">
+                  <span class="dot"></span>
+                  <span>Portfolio Analysis: Checking…</span>
+               </div>
+               <div id="mfapiStatus" class="status-item">
+                  <span class="dot"></span>
+                  <span>Service: Checking…</span>
+               </div>
+            </div>
+            <div>
+               Powered by
+               <a href="https://ai-implementer.netlify.app/" target="_blank">
+               AI-Implementer
+               </a>
+            </div>
+         </footer>
       </div>
-      <p class="text-gray-300 mb-8 leading-relaxed">
-       A smart scheduling assistant that books appointments instantly — for clinics, gyms, salons, or housing society amenities. Handles slot availability, confirmations, and updates automatically.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-       <div class="bg-gray-900/60 rounded-2xl p-6">
-        <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-         Key Features
-        </h3>
-        <ul class="list-disc list-inside space-y-1 text-gray-300">
-         <li>
-          24x7 AI-powered Booking Agent
-         </li>
-         <li>
-          Understands natural time phrases
-         </li>
-         <li>
-          Checks slot availability automatically
-         </li>
-         <li>
-          Records confirmed bookings in Sheets
-         </li>
-         <li>
-          Notifies users instantly
-         </li>
-        </ul>
-       </div>
-       <div class="bg-gray-900/60 rounded-2xl p-6">
-        <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-         How It Works
-        </h3>
-        <ol class="list-decimal list-inside space-y-1 text-gray-300">
-         <li>
-          Customer requests a booking
-         </li>
-         <li>
-          AI identifies intended date/time
-         </li>
-         <li>
-          Checks for slot availability
-         </li>
-         <li>
-          Confirms and logs booking
-         </li>
-         <li>
-          Notifies both user and business
-         </li>
-        </ol>
-       </div>
-       <div class="bg-gray-900/60 rounded-2xl p-6">
-        <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-         Benefits
-        </h3>
-        <ul class="list-disc list-inside space-y-1 text-gray-300">
-         <li>
-          24x7 appointment management
-         </li>
-         <li>
-          Human-like scheduling
-         </li>
-         <li>
-          Minimized booking errors
-         </li>
-         <li>
-          Instant confirmations
-         </li>
-        </ul>
-       </div>
-      </div>
-     </div>
-	
-     <!-- WhatsApp Business Assistant -->
-     <div class="solution-item bg-gray-800/80 p-8 rounded-3xl shadow-lg hover:shadow-cyan-700/30 transition-transform transform hover:-translate-y-1" id="whatsapp-assistant">
-      <div class="flex items-center justify-between mb-6">
-       <div class="flex items-center">
-        <i class="w-8 h-8 text-cyan-400 mr-3" data-lucide="message-square">
-        </i>
-        <h2 class="text-2xl font-bold text-cyan-400">
-         WhatsApp as Your All-in-One Business Assistant
-        </h2>
-       </div>
-       <span class="text-sm text-gray-400 italic">
-        Category: Communication AI
-       </span>
-      </div>
-      <p class="text-gray-300 mb-8 leading-relaxed">
-       Transform your messaging app into a smart business command center. Integrate Calendar, Contacts, Email, Research Agent, and Social Media to manage everything seamlessly from one chat.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-       <div class="bg-gray-900/60 rounded-2xl p-6">
-        <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-         Features
-        </h3>
-        <ul class="list-disc list-inside space-y-1 text-gray-300">
-         <li>
-          Smart Calendar Management
-         </li>
-         <li>
-          Instant Contact Access
-         </li>
-         <li>
-          Effortless Email Handling
-         </li>
-         <li>
-          Research on Demand
-         </li>
-         <li>
-          Automated Social Media Posts
-         </li>
-        </ul>
-       </div>
-       <div class="bg-gray-900/60 rounded-2xl p-6">
-        <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-         How It Works
-        </h3>
-        <ol class="list-decimal list-inside space-y-1 text-gray-300">
-         <li>
-          Connect WhatsApp to business apps
-         </li>
-         <li>
-          Use natural-language commands
-         </li>
-         <li>
-          AI executes tasks in real time
-         </li>
-         <li>
-          Stay auto-synced across tools
-         </li>
-        </ol>
-       </div>
-       <div class="bg-gray-900/60 rounded-2xl p-6">
-        <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-         Benefits
-        </h3>
-        <ul class="list-disc list-inside space-y-1 text-gray-300">
-         <li>
-          Save time by reducing app-switching
-         </li>
-         <li>
-          Boost efficiency and communication
-         </li>
-         <li>
-          Stay organized and in control
-         </li>
-         <li>
-          Focus on strategy, not routine
-         </li>
-        </ul>
-       </div>
-      </div>
-     </div>
-	 	 
-     <!-- Real Estate Manager -->
-     <div class="solution-item bg-gray-800/80 p-8 rounded-3xl shadow-lg hover:shadow-cyan-700/30 transition-transform transform hover:-translate-y-1" id="real-estate-manager">
-      <div class="flex items-center justify-between mb-6">
-       <div class="flex items-center">
-        <i class="w-8 h-8 text-cyan-400 mr-3" data-lucide="home">
-        </i>
-        <h2 class="text-2xl font-bold text-cyan-400">
-         Real Estate Manager
-        </h2>
-       </div>
-       <span class="text-sm text-gray-400 italic">
-        Category: Business Management AI
-       </span>
-      </div>
-      <p class="text-gray-300 mb-8 leading-relaxed">
-       Stay organized, stay ahead — manage properties, clients, and enquiries effortlessly. Automate listings, personalize search results, and centralize client management for faster deal closures.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-       <div class="bg-gray-900/60 rounded-2xl p-6">
-        <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-         Features
-        </h3>
-        <ul class="list-disc list-inside space-y-1 text-gray-300">
-         <li>
-          Instant Enquiry-to-Listing Match
-         </li>
-         <li>
-          Personalized Search Results
-         </li>
-         <li>
-          Advanced Property Filters
-         </li>
-         <li>
-          Streamlined Client Management
-         </li>
-         <li>
-          Mobile and Web Access
-         </li>
-         <li>
-          Actionable Business Insights
-         </li>
-        </ul>
-       </div>
-       <div class="bg-gray-900/60 rounded-2xl p-6">
-        <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-         How It Works
-        </h3>
-        <ol class="list-decimal list-inside space-y-1 text-gray-300">
-         <li>
-          Capture and match enquiries instantly
-         </li>
-         <li>
-          Generate tailored listings
-         </li>
-         <li>
-          Use AI-driven filters
-         </li>
-         <li>
-          Access all client data from one view
-         </li>
-         <li>
-          Retrieve insights and reports automatically
-         </li>
-        </ol>
-       </div>
-       <div class="bg-gray-900/60 rounded-2xl p-6">
-        <h3 class="text-lg font-semibold text-cyan-400 mb-3">
-         Benefits
-        </h3>
-        <ul class="list-disc list-inside space-y-1 text-gray-300">
-         <li>
-          Close deals faster with automation
-         </li>
-         <li>
-          Enhance customer experience
-         </li>
-         <li>
-          Improve team efficiency
-         </li>
-         <li>
-          Access data anytime, anywhere
-         </li>
-        </ul>
-       </div>
-      </div>
-     </div>
-	 
-	 
-     
-    </div>
-   </section>
-  </section>
-  <!-- Contact -->
-  <section class="py-20 px-6 bg-gray-900" id="contact">
-   <div class="max-w-5xl mx-auto text-center">
-    <h3 class="text-4xl font-bold text-cyan-400 mb-8">
-     Get in Touch
-    </h3>
-    <p class="text-gray-300 mb-12 max-w-2xl mx-auto">
-     Whether you’re exploring automation ideas, need help with AI tools, or want to streamline your workflow — let’s connect.
-    </p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-     <div class="bg-gray-800 p-8 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105">
-      <i class="w-8 h-8 text-cyan-400 mx-auto mb-4" data-lucide="mail">
-      </i>
-      <h4 class="text-lg font-semibold text-cyan-400 mb-2">
-       Email
-      </h4>
-      <p>✉️
-       <a class="text-gray-300 hover:text-cyan-400 transition" href="mailto:ai.implementer@gmail.com">
-        ai.implementer@gmail.com
-       </a>
-      </p>
-     </div>
-     <div class="bg-gray-800 p-8 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105">
-      <i class="w-8 h-8 text-cyan-400 mx-auto mb-4" data-lucide="phone">
-      </i>
-      <h4 class="text-lg font-semibold text-cyan-400 mb-2">
-       Call / WhatsApp
-      </h4>
-      <p class="text-gray-300">
-       📞
-       <strong>
-        +91 80875 58460
-       </strong>
-      </p>
-     </div>
-     <div class="bg-gray-800 p-8 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105">
-      <i class="w-8 h-8 text-cyan-400 mx-auto mb-4" data-lucide="square-pen">
-      </i>
-      <h4 class="text-lg font-semibold text-cyan-400 mb-2">
-       Query
-      </h4>
-      <p class="text-gray-300">📄
-       <a class="text-gray-300 hover:text-cyan-400 transition" href="enquiry.html">
-        Send Enquiry
-       </a>	   
-      </p>
-     </div>
-    </div>
-    <div class="mt-12">
-     <a class="inline-block bg-cyan-500 text-gray-900 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-cyan-400 transition transform hover:scale-105" href="mailto:ai.implementer@gmail.com">
-      Send a Message
-     </a>
-    </div>
-   </div>
-  </section>
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-center py-8">
-   <div class="text-lg text-gray-300 mb-4">
-    <p align="center">
-	<a class="text-cyan-400 hover:underline" href="faq.html">
-      FAQs
-     </a>
-     |
-	 <a class="text-cyan-400 hover:underline" href="/posts/blog.html">
-       Blogs
-     </a>
-	 | 
-     <a class="text-cyan-400 hover:underline" href="privacy-policy.html">
-      Privacy Policy
-     </a>
-     |
-     <a class="text-cyan-400 hover:underline" href="terms-of-service.html">
-      Terms of Service
-     </a>
-    </p>
-   </div>
-   <p class="text-sm text-gray-400">
-    © 2025 AI Implementer | Designed with passion for small businesses
-   </p>
-  </footer>
-  <!-- Initialize Lucide Icons -->
-  <script>
-   lucide.createIcons();
-  </script>
-  <script>
-   document.addEventListener('DOMContentLoaded', function() {
-    const dropdowns = document.querySelectorAll('.dropdown');
-
-    dropdowns.forEach(dropdown => {
-      const trigger = dropdown.querySelector('a');
-      trigger.addEventListener('click', function(e) {
-        e.preventDefault();
-        const isActive = dropdown.classList.contains('active');
-        // Close all other dropdowns
-        dropdowns.forEach(d => d.classList.remove('active'));
-        // Toggle current one
-        if (!isActive) dropdown.classList.add('active');
-      });
-    });
-
-    // Close dropdowns if clicked outside
-    document.addEventListener('click', function(e) {
-      if (![...dropdowns].some(d => d.contains(e.target))) {
-        dropdowns.forEach(d => d.classList.remove('active'));
-      }
-    });
-  });
-  </script>
- </body>
+      <script>
+         const form = document.getElementById("uploadForm");
+         const fileInput = document.getElementById("fileInput");
+         const submitBtn = document.getElementById("submitBtn");
+         const message = document.getElementById("message");
+         const result = document.getElementById("result");
+		 
+		 //service Availablity Status Check flags
+		 let isPortfolioServiceUp = false;
+		 let isMfapiUp = false;
+         
+         
+         //Add TIMER
+         let seconds = 0;
+         let timer = null;
+         
+         // START TIMER
+         function startTimer() {
+          seconds = 0;
+         
+          timer = setInterval(() => {
+         seconds++;
+         
+         const mins = Math.floor(seconds / 60);
+         const secs = seconds % 60;
+         
+         message.textContent =
+           mins > 0
+         	? `Generating report… (${mins}m ${secs}s)`
+         	: `Generating report… (${secs}s)`;
+          }, 1000);
+         }
+         
+         // STOP TIMER + FINAL MESSAGE
+         function stopTimerSuccess() {
+          if (timer) {
+			clearInterval(timer);
+			timer = null;
+          }
+         
+          message.textContent = "Report generated successfully";
+         }
+		 
+		 // STOP TIMER + FINAL MESSAGE
+         function stopTimerFailuer() {
+          if (timer) {
+			clearInterval(timer);
+			timer = null;
+          }
+         
+          message.textContent = "Report can not be generated";
+         }
+         
+         //
+         
+         form.addEventListener("submit", async (e) => {
+           e.preventDefault();         
+		   
+           if (!fileInput.files.length) return;                 
+         
+           try {  
+		            submitBtn.disabled = true;  
+					result.style.display = "none";
+					message.textContent = "Initiating Report Generation…";
+					 
+					await checkPortfolioService();
+					await checkMfapi();		
+					 
+		 
+					if (isPortfolioServiceUp && isMfapiUp) {
+					             
+						  // ⏱ TIMER — added
+						  startTimer();
+		   
+						  result.style.display = "none";
+				 
+						  const formData = new FormData();	
+						  formData.append("file", fileInput.files[0]);
+				  
+						  // report type
+						  const reportType =
+						  document.querySelector('input[name="reportType"]:checked').value;
+							 formData.append("reportType", reportType);
+						 const response = await fetch(
+								"https://unsparse-sherman-nonfallaciously.ngrok-free.dev/webhook/a08f780e-0c52-4adb-bf6d-62be4b9d6616",        
+								{ method: "POST", body: formData }
+						  );
+				 
+						 const html = await response.text();
+					 
+						 if (!html || html.trim() === "") {
+								 stopTimerFailuer(); 
+								
+								result.innerHTML = '<div style="font-weight:600;">⚠️ Report generation is temporarily unavailable</div><div style=" padding:14px 16px; border:1px solid #fed7aa;border-radius:8px; font-size:14px; line-height:1.5;">One or more services required to process this report may be temporarily unavailable. Please refresh the page and try again shortly. If the issue persists, contact support.</div>';
+						 }else{
+								stopTimerSuccess();
+								result.innerHTML = html;
+						 }
+						 result.style.display = "block";	
+					}else{
+					    message.textContent = "Failed to generate report, please refresh the page and try again.";
+					    result.style.display = "none";
+						result.innerHTML = '<div style="font-weight:600;">⚠️ Report generation is temporarily unavailable</div><div style=" padding:14px 16px; border:1px solid #fed7aa;border-radius:8px; font-size:14px; line-height:1.5;">One or more services required to process this report may be temporarily unavailable. Please refresh the page and try again shortly. If the issue persists, contact support.</div>';
+						result.style.display = "block";	
+					}					             
+           } catch (err) {
+             message.textContent = "Failed to generate report. Please try again.";
+           } finally {
+             clearInterval(timer); // ⏱ stop timer
+             submitBtn.disabled = false;
+           }
+         });
+         
+         const HEALTH_WEBHOOK = "https://unsparse-sherman-nonfallaciously.ngrok-free.dev/health";
+         const LOGIN_PAGE="https://myportfolioassessment.netlify.app/login.html";
+         const SYNC_NAV_WEBHOOK =
+         "https://unsparse-sherman-nonfallaciously.ngrok-free.dev/webhook-test/38bb8332-dd92-4994-97ad-b2bf8a4e7758";
+         
+         async function checkPortfolioService(){
+         const el = document.getElementById("portfolioServiceStatus");
+         const dot = el.querySelector(".dot");
+         const text = el.querySelector("span:last-child");
+         dot.classList.remove("up","down");
+         
+         try{
+           const res = await fetch(HEALTH_WEBHOOK,{cache:"no-store"});
+           if(!res.ok) throw 0;
+           dot.classList.add("up");
+		   isPortfolioServiceUp = true;   
+           text.textContent="Portfolio Analysis: Available";
+         }catch{
+           dot.classList.add("down");
+		   isPortfolioServiceUp = false; 
+           text.textContent="Portfolio Analysis: Unreachable";
+         }
+         }
+         
+         async function checkMfapi(){
+         const el = document.getElementById("mfapiStatus");
+         const dot = el.querySelector(".dot");
+         const text = el.querySelector("span:last-child");
+         dot.classList.remove("up","down");
+         
+         const controller=new AbortController();
+         const timeout=setTimeout(()=>controller.abort(),5000);
+         
+         try{
+           const res=await fetch("https://api.mfapi.in/mf/120503",{signal:controller.signal});
+           clearTimeout(timeout);
+           const data=await res.json();
+           if(!data?.meta?.scheme_name) throw 0;
+           dot.classList.add("up");
+		   isMfapiUp = true; 
+           text.textContent="Service: Available";
+         }catch{
+           clearTimeout(timeout);
+           dot.classList.add("down");
+		   isMfapiUp = false; 
+           text.textContent="Service: Unreachable";
+         }
+         }
+         
+         
+         const user=localStorage.getItem("authUser");
+         
+         
+         if(!user){window.location.href=LOGIN_PAGE;}
+         document.getElementById("loggedUser").innerText=user;
+         
+         
+         function logout(){
+           localStorage.removeItem("authUser");
+           window.location.href=LOGIN_PAGE;
+         }
+         
+         checkPortfolioService();
+         checkMfapi();
+      </script>
+   </body>
 </html>
