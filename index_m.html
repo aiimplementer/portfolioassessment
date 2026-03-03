@@ -175,6 +175,7 @@
 		 gap: 20px;
 		 flex-wrap: nowrap;   /* prevents wrapping */
 		  width:100%;
+		  padding: 20px;
          }
          .upload-card:hover{
          border-color:rgba(255,255,255,.18);
@@ -299,7 +300,7 @@
          .pill-selector{
          display:flex;
          flex-wrap:wrap;
-         gap:8px;
+          gap: 12px;
          margin-top:8px;
 		 align-items: center;  
          }
@@ -307,16 +308,15 @@
          display:none;
          }
          .pill{
-         padding:8px 18px;
-         font-size:12px;
-         border-radius:999px;
-         border:1px solid var(--border);
-         background:#0b1220;
-         color:var(--muted);
-         cursor:pointer;
-         transition:.2s ease;
-		 display: flex;
-		 align-items: center;  
+			padding:8px 18px;
+			padding: 12px 18px;
+			border-radius: 30px;
+			background: #0f1c2e;
+			color: #ccc;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			text-align: center;
+			flex: 1 1 auto;
          }
          .pill:hover{
          border-color:var(--accent);
@@ -375,6 +375,13 @@
 		  .card {
 			padding: 16px;
 		  }
+		  .pill-selector {
+				flex-direction: column;
+			}
+			.pill {
+				width: 100%;
+				font-size: 16px;
+			}
 		 }
          @media print{
          header,.upload-card,#message,.top-menu{display:none!important}
