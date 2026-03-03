@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio — Wealth Assessment</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-
 <style>
 :root{
 --bg:#0b0f1a;
@@ -43,6 +40,7 @@ padding:16px;
 }
 
 /* ================= HEADER ================= */
+
 .header-bar{
 display:flex;
 align-items:center;
@@ -58,7 +56,7 @@ gap:12px;
 }
 
 .logo{
-height:42px;
+height:40px;
 max-width:100%;
 }
 
@@ -118,16 +116,10 @@ background:linear-gradient(135deg,var(--accent),var(--accent-2));
 color:#001018;
 }
 
-.menu-link.active{
-color:var(--accent);
-font-weight:600;
-}
-
-.menu-link.active::after{width:100%}
-
 /* ================= HERO ================= */
+
 header{
-padding:14px 10px;
+padding:14px 12px;
 border-radius:14px;
 background:var(--panel-soft);
 border:1px solid var(--border);
@@ -142,6 +134,7 @@ margin:0;
 }
 
 /* ================= CARDS ================= */
+
 .upload-card{
 background:var(--panel);
 border:1px solid var(--border);
@@ -159,10 +152,11 @@ color:var(--accent);
 }
 
 /* ================= REPORT TYPE ================= */
+
 .report-type-card{
 display:flex;
 flex-direction:column;
-gap:14px;
+gap:12px;
 }
 
 .pill-selector{
@@ -171,10 +165,12 @@ flex-wrap:wrap;
 gap:10px;
 }
 
-.pill-selector input[type="radio"]{display:none;}
+.pill-selector input[type="radio"]{
+display:none;
+}
 
 .pill{
-padding:8px 16px;
+padding:8px 14px;
 font-size:12px;
 border-radius:999px;
 border:1px solid var(--border);
@@ -196,6 +192,7 @@ font-weight:600;
 }
 
 /* ================= FORM ================= */
+
 #uploadForm{
 display:flex;
 flex-direction:column;
@@ -250,6 +247,7 @@ min-height:20px;
 }
 
 /* ================= RESULT ================= */
+
 #result{
 display:none;
 margin-top:20px;
@@ -282,6 +280,7 @@ border-bottom:1px solid #e2e8f0;
 .loss{color:var(--error);font-weight:600}
 
 /* ================= FOOTER ================= */
+
 .footer-bar{
 display:flex;
 flex-wrap:wrap;
@@ -318,6 +317,7 @@ background:#6b7280;
 .dot.down{background:var(--error)}
 
 /* ================= MOBILE ================= */
+
 @media (max-width:768px){
 
 .header-bar{
@@ -336,91 +336,7 @@ align-items:flex-start;
 
 }
 </style>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 </head>
-
-<body>
-<div class="page">
-
-<!-- HEADER -->
-<div class="header-bar">
-<img class="logo" src="https://ai-implementer.netlify.app/images/ai-implementer-logo.png">
-<div class="user-area-header">Smart Portfolio Review Report Generator</div>
-<div class="top-menu">
-<span class="logged-user">Logged in as: <strong id="loggedUser"></strong></span>
-<a href="index.html" class="menu-link active" onclick="return false;">Dashboard</a>
-<a href="faq.html" class="menu-link">FAQ</a>
-<button class="menu-link logout-btn" onclick="logout()">Logout</button>
-</div>
-</div>
-
-<!-- HERO -->
-<header>
-<p>
-Understand where your money is invested, how it is performing,
-and what adjustments can improve balance.
-</p>
-</header>
-
-<!-- REPORT TYPE -->
-<div class="upload-card report-type-card">
-<h2>Select Report Type:</h2>
-<div class="pill-selector">
-<input type="radio" id="summary" name="reportType" value="summary" checked>
-<label for="summary" class="pill">Portfolio Overview</label>
-
-<input type="radio" id="fund-performance" name="reportType" value="fund-performance">
-<label for="fund-performance" class="pill">Fund Performance Analysis</label>
-
-<input type="radio" id="rebalancing" name="reportType" value="rebalancing">
-<label for="rebalancing" class="pill">Smart Rebalancing</label>
-
-<input type="radio" id="monthly" name="reportType" value="monthly">
-<label for="monthly" class="pill">Monthly Insights</label>
-
-<input type="radio" id="myPortfolioView" name="reportType" value="myPortfolioView">
-<label for="myPortfolioView" class="pill">My Portfolio View</label>
-</div>
-</div>
-
-<!-- UPLOAD -->
-<div class="upload-card">
-<h2>Upload Portfolio PDF</h2>
-<form id="uploadForm">
-<input type="file" id="fileInput" accept=".pdf" required>
-<button class="btn-submit" id="submitBtn" type="submit">
-Upload & Generate Analysis Report
-</button>
-<div id="message"></div>
-</form>
-</div>
-
-<div id="result"></div>
-
-<!-- FOOTER -->
-<footer class="footer-bar">
-<div class="footer-status">
-<div id="portfolioServiceStatus" class="status-item">
-<span class="dot"></span>
-<span>Portfolio Analysis: Checking…</span>
-</div>
-<div id="mfapiStatus" class="status-item">
-<span class="dot"></span>
-<span>Service: Checking…</span>
-</div>
-</div>
-<div>
-Powered by
-<a href="https://ai-implementer.netlify.app/" target="_blank">AI-Implementer</a>
-</div>
-</footer>
-
-</div>
-
-<!-- ================= YOUR ORIGINAL SCRIPT (UNCHANGED) ================= -->
-<script>
-/* Your entire original JS remains exactly the same here */
-/* I did not modify functionality to keep webhook, login, and services intact */
-</script>
-
-</body>
-</html>
