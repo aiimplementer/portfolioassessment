@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta charset="UTF-8">
       <title>Portfolio — Wealth Assessment</title>
       <style>
@@ -27,13 +26,11 @@
          linear-gradient(180deg,#0b1220,#070b14);
          color:var(--text);
          min-height:100vh;
-		 overflow-x: hidden;
          }
          .page{
-          width: 100%;
-		  max-width: 1100px;
-		  margin: auto;
-		  padding: 20px 16px;
+         max-width:90%;
+         margin:auto;
+         padding:18px 18px 4px;
          }
          /* HEADER BAR */
          /* HEADER BAR */
@@ -262,11 +259,6 @@
 		  width:100%;          /* ensure full width */
          }
          /* RESULT */
-		 table {
-		  width: 100%;
-		  border-collapse: collapse;
-		  font-size: 14px;
-		}
          #result{
          display:none;	
          margin-top:20px;
@@ -279,7 +271,6 @@
          width:100%;
          border-collapse:collapse;
          font-size:13px;
-		 overflow-x: auto;
          }
          #result thead th{
          background:#0f172a;
@@ -362,20 +353,6 @@
          text-decoration:none;
          }
          /* PRINT */
-		 @media (max-width: 768px) {
-		  .header-bar {
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-			gap: 10px;
-		  }
-		  h1 {
-			font-size: 22px;
-		  }
-		  .card {
-			padding: 16px;
-		  }
-		 }
          @media print{
          header,.upload-card,#message,.top-menu{display:none!important}
          body{background:#fff!important}
@@ -434,27 +411,30 @@
     color:#38bdf8; /* cyan highlight */
     text-shadow:0 0 8px rgba(56,189,248,0.6);
 }
+.upload-card {
+  align-self: flex-start;
+}
 
 
       </style>
+	  
+	  
       <!-- Tailwind CSS -->
       <script src="https://cdn.tailwindcss.com"></script>
       <!-- Google Font -->
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+	  <script src="config.js"></script>
+	  
    </head>
    <body>
       <div class="page">
          <!-- ===== TOP ROW ===== -->
 		<div class="header-bar">
-		    <a href="https://ai-implementer.netlify.app/" target="_blank">
 			<img class="logo" 
 				 src="https://ai-implementer.netlify.app/images/ai-implementer-logo.png">
-			</a>
 
 			<div class="user-area-header">
-			<a href="https://ai-implementer.netlify.app/#smart-portfolio-review" target="_blank">
 				Smart Portfolio Review Report Generator
-				</a>
 			</div>
 
 			<!-- ===== RIGHT MENU ===== -->
@@ -489,7 +469,7 @@
          <div class="upload-card report-type-card">
             <h2>Select Report Type:</h2>
             <div class="pill-selector">
-               <input type="radio" id="summary" name="reportType" value="summary" >
+               <input type="radio" id="summary" name="reportType" value="summary" checked>
 						<label for="summary" class="pill">Portfolio Overview</label>
 			   <input type="radio" id="fund-performance" name="reportType" value="fund-performance" >
 						<label for="fund-performance" class="pill">Fund Performance Analysis</label>
@@ -497,7 +477,7 @@
 						<label for="rebalancing" class="pill">Smart Rebalancing</label>
                <input type="radio" id="monthly" name="reportType" value="monthly">
 						<label for="monthly" class="pill">Monthly Insights</label>
-				<input type="radio" id="myPortfolioView" name="reportType" value="myPortfolioView" checked>
+				<input type="radio" id="myPortfolioView" name="reportType" value="myPortfolioView">
 						<label for="myPortfolioView" class="pill">My Portfolio View</label>
 						
             </div>
@@ -653,10 +633,9 @@
            }
          });
          
-         const HEALTH_WEBHOOK = "https://unsparse-sherman-nonfallaciously.ngrok-free.dev/health";
+         
          const LOGIN_PAGE="https://myportfolioassessment.netlify.app/login.html";
-         const SYNC_NAV_WEBHOOK =
-         "https://unsparse-sherman-nonfallaciously.ngrok-free.dev/webhook-test/38bb8332-dd92-4994-97ad-b2bf8a4e7758";
+         
          
          async function checkPortfolioService(){
          const el = document.getElementById("portfolioServiceStatus");
@@ -665,7 +644,15 @@
          dot.classList.remove("up","down");
          
          try{
-           const res = await fetch(HEALTH_WEBHOOK,{cache:"no-store"});
+           const res = await fetch(API.health,
+			  {
+				cache: "no-store",
+				headers: {
+				  "ngrok-skip-browser-warning": "true"
+				}
+			  }
+			);
+			
            if(!res.ok) throw 0;
            dot.classList.add("up");
 		   isPortfolioServiceUp = true;   
@@ -687,7 +674,7 @@
          const timeout=setTimeout(()=>controller.abort(),5000);
          
          try{
-           const res=await fetch("https://api.mfapi.in/mf/120503",{signal:controller.signal});
+           const res=await fetch(API.service,{signal:controller.signal});
            clearTimeout(timeout);
            const data=await res.json();
            if(!data?.meta?.scheme_name) throw 0;
@@ -706,7 +693,7 @@
          const user=localStorage.getItem("authUser");
          
          
-         if(!user){window.location.href=LOGIN_PAGE;}
+         if(!user){window.location.href=API.login;}
          document.getElementById("loggedUser").innerText=user;
          
          
@@ -719,5 +706,4 @@
          checkMfapi();
       </script>
    </body>
-
 </html>
